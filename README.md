@@ -1,5 +1,7 @@
 # RetailPulse 360
 
+[![Headless validation](https://github.com/khaledzidan203-stack/retailpulse-360/actions/workflows/ci.yml/badge.svg)](https://github.com/khaledzidan203-stack/retailpulse-360/actions/workflows/ci.yml)
+
 **End-to-End Multi-Branch Retail Sales & Business Intelligence Analytics**
 
 > **PRE-RELEASE — Desktop QA pending.** Independent, entirely fictional portfolio: 30 stores, 2025–2026, fictional CUR currency. Headless generation, snapshots and Python/SQLite parity have been executed locally. Power BI refresh, DAX-engine parity and interactions have **NOT RUN** in this release session. This is not a final validated release. See [validation results](docs/VALIDATION_RESULTS.md).
@@ -68,7 +70,7 @@ python -B tools/reproduce.py --output "../retailpulse build"
 
 The output directory **must not exist** and must be outside the checkout. The bootstrap refuses overwrite. It produces `project/data/synthetic/`, `project/data/processed/p3_2/`, G0001–G0004 under `project/data/processed/p3_3/`, and `project/data/processed/p4_1/retailpulse360_g0004.sqlite`, plus separate local logs and `results.json`. The current generation stays G0004. Output contains a copied Power BI project; the source checkout remains unchanged.
 
-All 190 approved synthetic/ETL/snapshot files are compared to independently captured baseline SHA-256 values. The bootstrap executes lifecycle/seed checks, 20 snapshot scenarios and 8 atomic gates, 14 complete-input mutation cases at each of two generation transitions, SQLite financial checks, 37 KPI IDs over 13 scenarios, 12 arithmetic/date fixtures and generation refresh tests. Expected business totals include Official **3,759,335,807 cents**, Marketplace **514,398,580 cents**, and 36,438 Official fact rows. These are full-horizon totals, not the 2026-only screenshot totals.
+All 190 output files (187 regenerated artifacts and 3 retained provenance fixtures) are compared to independently captured baseline SHA-256 values. The bootstrap executes lifecycle/seed checks, 20 snapshot scenarios and 8 atomic gates, 14 complete-input mutation cases at each of two generation transitions, SQLite financial checks, 37 KPI IDs over 13 scenarios, 12 arithmetic/date fixtures and generation refresh tests. Expected business totals include Official **3,759,335,807 cents**, Marketplace **514,398,580 cents**, and 36,438 Official fact rows. These are full-horizon totals, not the 2026-only screenshot totals.
 
 See [reproduction details](docs/REPRODUCTION.md). Historical scripts are retained for traceability; use the supported bootstrap rather than running historical executables recursively.
 

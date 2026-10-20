@@ -15,13 +15,15 @@ Executed 2026-10-21 (Asia/Riyadh). This document reports headless evidence; it i
 | Generator and ETL | PASS | `tools/reproduce.py --output <new external directory>` | 9 lifecycle checks, 14 sales/budget/marketplace checks, 22 fixture checks; deterministic ETL |
 | Snapshot engine | PASS | Same bootstrap | 20 scenarios and 8 operational gates; fault cases must produce their expected BLOCKED/DQ_REVIEW outcome |
 | Full input mutations | PASS | Same bootstrap | 14 cases at G0003 and G0004 transitions, including protected-history conflict, missing coverage, digital excess, correction/retraction and earlier As-Of |
-| Independent baseline | PASS | `release/data_baseline.json` | 190 regenerated files match approved source SHA-256 values |
+| Independent baseline | PASS | `release/data_baseline.json` | 190 output files match approved SHA-256 values: 187 regenerated artifacts and 3 retained provenance fixtures |
 | SQLite and governed KPI parity | PASS | Same bootstrap | Exact G0004 SQLite hash; independent CSV/SQL arithmetic, 37 KPI IDs across 13 scenarios, 12 independent arithmetic/date fixtures |
 | SQLite generation refresh | PASS | Same bootstrap | Historical generation rebuild checks executed |
 | Actual publisher rollback/replay + future SQLite | PASS | Final bootstrap run | Injected failure returned expected exit 2 and restored G0004; real G0005 publish and identical replay succeeded; G0005 SQLite rebuilt; main output remains G0004 |
 | Clean Git checkout rehearsal | PASS | Fresh local Git clone, fresh venv, exact README commands | Dependencies exit 0; 5 tests exit 0; static/privacy exit 0; full build exit 0 in 81.61 seconds; checkout remained unchanged |
 | Power BI Desktop runtime | NOT RUN | Native Desktop control unavailable | Refresh, actual DAX parity and all-page interactions require local Desktop checklist |
-| GitHub Actions | NOT RUN yet | `.github/workflows/ci.yml` | Actual remote run required after push; never inferred from local tests |
-| Git push / remote images | NOT RUN yet | Publication gated on completed headless and privacy checks | No final version tag or GitHub Release |
+| GitHub Actions | PASS at verified checkpoint; latest status linked | [Successful run 39516331649](https://github.com/khaledzidan203-stack/retailpulse-360/actions/runs/39516331649) | Full headless CI succeeded for commit 26156526f46d764aed4f22894470ea30708cf8f8. [Latest workflow runs](https://github.com/khaledzidan203-stack/retailpulse-360/actions/workflows/ci.yml) validate subsequent commits |
+| Git push / remote images | PASS | Public main branch, actual remote clone and raw HTTP downloads | All 304 remote files matched; README and all 11 images HTTP 200 with exact bytes. No final version tag or GitHub Release |
 
 Static M checks cover shared parameter/loader structure and preserved table sources; no M evaluation or DAX-engine execution is claimed. Other Python/SQLite runtimes are not certified. Original document approval headers and historical QA JSON remain provenance, not substitutes for these reruns. The gallery preserves original visuals, including current sorts and gauges; review the explicit Desktop checklist for remaining presentation checks.
+
+The first successful run emitted a deprecated Node 20 action warning. Official checkout and setup-python actions are now pinned to v6 commit SHAs; each subsequent push executes the full workflow again. The README badge and workflow links expose the current remote result.
