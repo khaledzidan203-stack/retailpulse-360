@@ -19,7 +19,7 @@ Executed 2026-10-21 (Asia/Riyadh). This document reports headless evidence; it i
 | SQLite and governed KPI parity | PASS | Same bootstrap | Exact G0004 SQLite hash; independent CSV/SQL arithmetic, 37 KPI IDs across 13 scenarios, 12 independent arithmetic/date fixtures |
 | SQLite generation refresh | PASS | Same bootstrap | Historical generation rebuild checks executed |
 | Actual publisher rollback/replay + future SQLite | PASS | Final bootstrap run | Injected failure returned expected exit 2 and restored G0004; real G0005 publish and identical replay succeeded; G0005 SQLite rebuilt; main output remains G0004 |
-| Clean Git checkout rehearsal | NOT RUN yet | Local clone planned after initial reviewed commit | Required before public push |
+| Clean Git checkout rehearsal | PASS | Fresh local Git clone, fresh venv, exact README commands | Dependencies exit 0; 5 tests exit 0; static/privacy exit 0; full build exit 0 in 81.61 seconds; checkout remained unchanged |
 | Power BI Desktop runtime | NOT RUN | Native Desktop control unavailable | Refresh, actual DAX parity and all-page interactions require local Desktop checklist |
 | GitHub Actions | NOT RUN yet | `.github/workflows/ci.yml` | Actual remote run required after push; never inferred from local tests |
 | Git push / remote images | NOT RUN yet | Publication gated on completed headless and privacy checks | No final version tag or GitHub Release |
