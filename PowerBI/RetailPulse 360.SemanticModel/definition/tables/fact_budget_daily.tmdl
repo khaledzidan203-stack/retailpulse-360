@@ -1,0 +1,55 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table fact_budget_daily
+	lineageTag: c863416c-044d-4d74-a5ac-c378c921258d
+
+	column store_key
+		dataType: string
+		lineageTag: 43bba5b5-6d15-4b47-82ad-1c35178156d5
+		summarizeBy: none
+		sourceColumn: store_key
+
+	column date_key
+		dataType: int64
+		lineageTag: 5f2b3fec-7941-4bc4-9de5-8041536f1a17
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column channel_key
+		dataType: string
+		lineageTag: 4630fc36-71a7-457d-862b-36a84de29391
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column allocated_budget_cents
+		dataType: int64
+		lineageTag: 92e6049d-7113-42c1-a94b-f4c7d0f73d53
+		summarizeBy: none
+		sourceColumn: allocated_budget_cents
+
+	column budget_version
+		dataType: string
+		lineageTag: ac634836-beca-4694-99d6-94080c5dc85d
+		summarizeBy: none
+		sourceColumn: budget_version
+
+	column allocation_policy_version
+		dataType: string
+		lineageTag: a48d3712-c483-40cb-84b4-55d375f869d3
+		summarizeBy: none
+		sourceColumn: allocation_policy_version
+
+	partition fact_budget_daily = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/fact_budget_daily.csv", {
+				        {"store_key", type text},
+				        {"date_key", Int64.Type},
+				        {"channel_key", type text},
+				        {"allocated_budget_cents", Int64.Type},
+				        {"budget_version", type text},
+				        {"allocation_policy_version", type text}
+				    })
+				in
+				    Source
+

@@ -1,0 +1,307 @@
+# Public file inventory
+
+Source-only candidate. This inventory excludes itself; generated data and local execution evidence are not tracked. Original file decisions and protected hashes are under `release/`. The authoritative final payload is `git ls-files`.
+
+- `.gitattributes`
+- `.github/workflows/ci.yml`
+- `.gitignore`
+- `PowerBI/.gitignore`
+- `PowerBI/RetailPulse 360.Report/.platform`
+- `PowerBI/RetailPulse 360.Report/StaticResources/SharedResources/BaseThemes/Fluent2-CY26SU10.json`
+- `PowerBI/RetailPulse 360.Report/definition.pbir`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/0c0561b7cf276a02611a/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/0e056c1e00566abf9252/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/24692ad28fab8820e014/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/3b3b236d9ce04d09f2ab/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/3fea5142cf109a6f543a/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/4535fc568f552168c0f2/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/5f73687a769c551ae472/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/86549d3d6e4f827f73bb/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/94a0bdd7b06e4917452d/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/cdae47b2aaa7cf23d866/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/d40f88fa06b4ff785603/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/e352e493ac15dcb224f7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/e6482ba985a123fa6215/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/01a0ff0ffb3aa54b0c56/visuals/f850e6ad55bec2d20439/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/112672439ae8ef202819/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/333bff35c91b00abeb09/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/3a01be0fc011f85c503b/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/5c16a18235d213ef7593/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/6861236dd3752f294164/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/72bfa2170d0bbb5d59bd/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/8f5987c9ae3f518d3eb8/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/91fbea8bdc90ca52d7bd/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/92bd6eb2a7dd72711db3/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/c832ac6e2403b7bf0f84/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/e6f464dc8c440f512eb3/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/e77f1372d8297c7abfe9/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/1937a472d9e7a40ff934/visuals/facce589107906633ab3/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/0c0c889d7848729e5e5e/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/0d96601478bc11c93674/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/1090bf12be618346ee05/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/25900d9f4320aeeee739/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/7be761cd836b119c8cf7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/893fff6c4072d75d6721/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/923e65ff223bd3f2cfe2/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/9404cc53af12c582e799/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/963c955138864c769465/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/a3a954d689b04db71f56/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/a4cb4db4dab408046c98/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/bdacaf410216f39932c7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/ead5e9b728b2dc48f59e/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/eb2fbbf27cd2d48b0640/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/3b5406cf184d0063bb3b/visuals/fdb923bdd94e0cf129d8/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/13b94e1994a7790e65eb/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/19bc16cf9a74c597d2bf/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/1aaa1920394b38c2e562/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/1df964dc1f12856311e8/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/34a2bff70eb85bb5f840/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/5d3c47159b1fec9cb61b/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/81c69b07e3a7ecdccde7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/85174c3fe60a1d3a5f08/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/98e0ebf305ba21ed96af/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/99e33b7b95ecf38ed2e8/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/a5f29ea79d3f47609dc1/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/cb1f395381146321dac2/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/cc87c6287bb19461f8f1/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/d804183897005fd38869/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/4dadaf513791138165c4/visuals/f983d948d045b71431a0/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/0c6d1541152b9c76afb4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/3b85e22e11a8d77fd6f1/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/40f8dab4ca34ab80f049/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/48f3e48b038cce681595/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/49a2f895603daca88dc0/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/5a56bc7fa7e6f70a2a62/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/627e0fc18de695f8d6ec/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/6c00006ec5456aaf5181/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/7179a3556c9a5361bd8b/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/7320fb4021d484fae5e4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/919d918ef87e6d9455b2/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/a52c7d3daebfef396fec/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/edccb8b01961cc8d258d/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/621e1c2d7c22c2fa2c25/visuals/ff14dca619bc5807060b/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/2a51a93a3e8e36a908b7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/56e3fef85e201075142e/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/7ce4e8d9b5b17b766edf/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/8dc64d5ba344be1c781b/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/90a38d423f0879240b2f/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/979601e7cba265d05fe0/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/c01d5d90666a3f95cad0/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/eabfb09ded01ea070e79/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/fb175f94594fcc8912c3/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/fe39a0cf2e1a113aacec/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/9151786dc477f481dece/visuals/fecafc054fb9ee372af4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/1a4807762339af12598d/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/359fee16fc640027cc82/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/95efb0a5d7a6b52f20f7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/97f2ad691f85d48fb9ff/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/ae1112be103266fbd941/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/b1820b592935dc2ff395/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/baabb800db4435404ea4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/d7638e83a58c10a3e6ca/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/dcb2a9c384946b2e7885/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/e2117e80cc48f0d0cb67/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/e2b69b5971d1483bc909/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/f33c4f148fa85293d608/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/aeea39d8214df36e8213/visuals/f9eda722ce46e5278888/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/4ba5fa6c0badd357b1fe/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/51978942c104276341ed/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/5742d0808eea8e86ea21/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/5885526b4df6754231ed/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/59a006a74c293eb4e9b4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/5cd40303d421d8911533/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/73b9a14a1a36773e6daa/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/742a081dd2223858e8bc/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/8ad30e8331eccdaa8034/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/a3907ec4c408fd186135/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/a45e11a26b87810e8883/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/c6e1a5232aa965c00cda/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/de139cbe2c4ccc666e99/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/e2764b55b967f4b0bdfd/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/e78b1e2f32c690116394/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/edcf88ea781bf220e203/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/eece66a197c145d7e8d7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d2e75f00a017320638b6/visuals/f9aae95c4281efd42cdc/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/1d5aa914ce2d669d5734/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/2fa9930dd8e74cf043e4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/37fb20a941bab9e0e85d/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/3805a0ff72112421a8c7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/4400c17f56b52a8a0c99/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/501e802b50c81fe68478/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/54014a808f00e9472dd4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/6c6729bda4d01fd8f765/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/6ceb8c07ed0b411e44a8/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/7f93dc9f2a03aeec32f7/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/8fec89e70af6ecf005e6/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/94acd01b71c2a15c5d20/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/9558583a7d69b376dff6/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/a6d042653d772bf28655/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/b3650e681f840d85b710/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/b72b607b832e7a7d65c1/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/d46764b6b56dd17348c6/visuals/c48bc191934bb3059aa5/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/239aa738ab289af90100/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/27b1a2762cec80b4eb37/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/29359c52c6e6ee2466ed/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/2a3e523dd45be5f8b471/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/2fc68b95106878fdc9c1/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/4dc6009fce39aa34ce9f/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/7b92c5fe832ac795614c/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/7cb53f54dc272124a4e5/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/7df30e410af47f18f385/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/936ea031e84d71181611/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/99ecdac7c4927dc5989b/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/d33767125f4900c0fa99/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/dec2442a2a26089973ce/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/e50ad6d4bd50333ccd08/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/e966b2efdd03ea406017/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/e9c4665675877d139074/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/dac6ebdf4549bf2112cf/visuals/ef8431cd3f9d5ac6a59c/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/page.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/0f3fca175f76fe25cd36/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/10608ed48d3f04900b26/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/2db9f3e16259b8896859/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/30549f7e3fd83ebd15e3/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/3ad8bb0f0247e8fc18d6/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/475ebdbc4eeb32e6f4d4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/503b180b735295616add/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/561881c0ffec0c49763c/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/5f15ced67516ffcee235/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/695a12d1c354598c9ec4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/8e43118af2dd2f005351/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/91f320f3cbeef8447016/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/9ea824f5a3cd476e1037/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/ab6132b3c46bad1996e4/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/dc243f481910883bdbcb/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/e349b82ba242dae8a120/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/f59d171b7c9d18d349ee/visuals/ec088f435d152a2bf4b1/visual.json`
+- `PowerBI/RetailPulse 360.Report/definition/pages/pages.json`
+- `PowerBI/RetailPulse 360.Report/definition/report.json`
+- `PowerBI/RetailPulse 360.Report/definition/version.json`
+- `PowerBI/RetailPulse 360.SemanticModel/.platform`
+- `PowerBI/RetailPulse 360.SemanticModel/DAXQueries/Query 1.dax`
+- `PowerBI/RetailPulse 360.SemanticModel/definition.pbism`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/cultures/en-US.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/database.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/expressions.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/model.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/relationships.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/DateTableTemplate_92b97af8-f11b-4333-b46b-af018a793c3b.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_118a4bf6-edd0-452a-8fbf-b8de33d78938.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_28540d96-bc6a-4c62-aeac-4adc851c2efa.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_523682f0-6b95-4613-b696-08e8593978c9.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_5a070f1d-e74b-4121-9436-672a953e0411.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_70907654-7640-4ec4-96a7-0999a1e8728d.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_825de049-126b-4fa4-b861-09f0dd6bd753.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_8598f576-22c6-4fea-98c4-c8a2a5ec1ed4.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_9ad5742d-79c1-43bd-9d62-f53c577cea0b.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_c5421dd7-ef68-4add-8eeb-858dd532cfac.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_d11d8a6d-8736-4b8d-9167-70ade60f558f.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_eae3faa5-138c-4ae6-bf06-100bea666164.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/LocalDateTable_fd734f4b-44db-4130-a5e8-b39f69c8ee06.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/Query1.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/_Measures.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/bridge_account_store_period.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/dim_channel.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/dim_date.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/dim_marketplace_account.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/dim_store.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/dq_findings.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/fact_budget_daily.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/fact_budget_monthly.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/fact_marketplace_daily.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/fact_sales_daily.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/generation_metadata.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/source_coverage_marketplace.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/source_coverage_official.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/definition/tables/store_operating_calendar.tmdl`
+- `PowerBI/RetailPulse 360.SemanticModel/diagramLayout.json`
+- `PowerBI/RetailPulse 360.pbip`
+- `README.md`
+- `docs/ARCHITECTURE_DECISIONS.md`
+- `docs/DATA_MODEL_SPEC.md`
+- `docs/DATA_PRIVACY.md`
+- `docs/KPI_CONTRACTS.md`
+- `docs/PHASE_1_REVIEW.md`
+- `docs/PHASE_3_ETL_SNAPSHOTS.md`
+- `docs/POWER_BI_RUNTIME_QA.md`
+- `docs/PROJECT_CHARTER.md`
+- `docs/QA_TEST_MATRIX.md`
+- `docs/RELEASE_NOTES.md`
+- `docs/REPORT_PAGE_MATRIX.md`
+- `docs/REPRODUCTION.md`
+- `docs/SYNTHETIC_GENERATOR_SPEC.md`
+- `docs/VALIDATION_RESULTS.md`
+- `release/FILE_DECISIONS.md`
+- `release/data_baseline.json`
+- `release/file_decisions.json`
+- `release/powerbi_baseline.json`
+- `requirements.txt`
+- `screenshots/00-index.png`
+- `screenshots/01-executive-performance.png`
+- `screenshots/02-weekly-monthly-trends.png`
+- `screenshots/03-quarterly-year-over-year.png`
+- `screenshots/04-like-for-like-store-cohorts.png`
+- `screenshots/05-retail-channel.png`
+- `screenshots/06-program-channel.png`
+- `screenshots/07-customer-basket.png`
+- `screenshots/08-store-geography.png`
+- `screenshots/09-digital-marketplace.png`
+- `screenshots/10-data-quality-methodology.png`
+- `sql/sqlite/p4_2/analytics_views.sql`
+- `sql/sqlite/p4_2/kpi_queries.sql`
+- `sql/sqlite/p4_2/p4_2_manifest.json`
+- `sql/sqlite/p4_2/python_sql_parity.json`
+- `src/retailpulse360/__init__.py`
+- `src/retailpulse360/legacy_steps/RetailPulse360_P2_1_v2.py`
+- `src/retailpulse360/legacy_steps/RetailPulse360_P2_2.py`
+- `src/retailpulse360/legacy_steps/RetailPulse360_P2_3.py`
+- `src/retailpulse360/legacy_steps/RetailPulse360_P3_1.py`
+- `src/retailpulse360/legacy_steps/RetailPulse360_P3_2_v5.py`
+- `src/retailpulse360/legacy_steps/RetailPulse360_P3_3.py`
+- `src/retailpulse360/legacy_steps/__init__.py`
+- `src/retailpulse360/phase4_validation/kpi_sql_parity.py`
+- `src/retailpulse360/phase4_validation/powerquery/00_pProjectRoot.txt`
+- `src/retailpulse360/phase4_validation/powerquery/01_pGeneration.txt`
+- `src/retailpulse360/phase4_validation/powerquery/02_fnLoadCsv.m`
+- `src/retailpulse360/phase4_validation/powerquery/README_IMPORT.txt`
+- `src/retailpulse360/phase4_validation/powerquery/q_bridge_account_store_period.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_dim_channel.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_dim_date.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_dim_marketplace_account.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_dim_store.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_dq_findings.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_fact_budget_daily.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_fact_budget_monthly.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_fact_marketplace_daily.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_fact_sales_daily.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_generation_metadata.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_source_coverage_marketplace.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_source_coverage_official.m`
+- `src/retailpulse360/phase4_validation/powerquery/q_store_operating_calendar.m`
+- `src/retailpulse360/snapshot_ingest.py`
+- `src/retailpulse360/snapshot_publish.py`
+- `src/retailpulse360/sql_analytics.py`
+- `src/retailpulse360/sqlite_build.py`
+- `src/retailpulse360/sqlite_refresh.py`
+- `tests/fixtures/provenance/p2_1_promotion_record.json`
+- `tests/fixtures/provenance/p2_2_promotion_record.json`
+- `tests/fixtures/provenance/p2_3_promotion_record.json`
+- `tests/p4_3/kpi_coverage_scope.json`
+- `tests/p4_3/kpi_edge_parity.json`
+- `tests/p4_3/kpi_edge_queries.sql`
+- `tests/p4_3/p4_3_manifest.json`
+- `tests/p4_3/test_kpi_edges.py`
+- `tests/test_bootstrap_safety.py`
+- `tests/test_sources.py`
+- `tools/reproduce.py`
+- `tools/validate_public.py`

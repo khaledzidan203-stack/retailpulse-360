@@ -1,0 +1,18 @@
+{
+  "contract_ids": 37,
+  "incremental_kpi_ids": [
+    "KPI-009",
+    "KPI-019",
+    "KPI-020",
+    "KPI-021",
+    "KPI-033",
+    "KPI-034",
+    "KPI-035",
+    "KPI-036",
+    "KPI-037"
+  ],
+  "incremental_results": "PYTHON_SQL_PARITY_ONLY",
+  "not_yet_proven": "Full 37 KPI scenario/edge coverage, comprehensive KPI SQL API, DAX, Power BI Desktop",
+  "phase4_status": "PARTIAL_SQLITE_VALIDATION_ONLY",
+  "previously_tested_contexts": 13
+}

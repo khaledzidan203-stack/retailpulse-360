@@ -1,0 +1,69 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table fact_marketplace_daily
+	lineageTag: 8efdeb1d-923a-4248-a3b2-f40201cfd63f
+
+	column store_key
+		dataType: string
+		lineageTag: d8d3f68d-fc29-448d-8bbc-a91b1eeed134
+		summarizeBy: none
+		sourceColumn: store_key
+
+	column account_key
+		dataType: string
+		lineageTag: 866a3986-a7a5-48be-9a98-3fe80e9937d8
+		summarizeBy: none
+		sourceColumn: account_key
+
+	column date_key
+		dataType: int64
+		lineageTag: 9fcbff15-8a55-4703-8226-e5b9c6e27712
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column attributed_retail_net_sales_cents
+		dataType: int64
+		lineageTag: f19eae81-c7b1-407f-99a6-016a03743331
+		summarizeBy: none
+		sourceColumn: attributed_retail_net_sales_cents
+
+	column orders
+		dataType: int64
+		lineageTag: 447a164a-63f4-4473-b807-a7e3b23f67ad
+		summarizeBy: none
+		sourceColumn: orders
+
+	column units
+		dataType: int64
+		lineageTag: 49981224-9ad9-428a-bf43-e7b866a0ad38
+		summarizeBy: none
+		sourceColumn: units
+
+	column source_snapshot_id
+		dataType: string
+		lineageTag: 9559e0ac-c24b-4f85-b9f0-c733bbb9b3d4
+		summarizeBy: none
+		sourceColumn: source_snapshot_id
+
+	column lineage_hash
+		dataType: string
+		lineageTag: d13bd783-2861-4add-b84c-6727c970ac7b
+		summarizeBy: none
+		sourceColumn: lineage_hash
+
+	partition fact_marketplace_daily = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/fact_marketplace_daily.csv", {
+				        {"store_key", type text},
+				        {"account_key", type text},
+				        {"date_key", Int64.Type},
+				        {"attributed_retail_net_sales_cents", Int64.Type},
+				        {"orders", Int64.Type},
+				        {"units", Int64.Type},
+				        {"source_snapshot_id", type text},
+				        {"lineage_hash", type text}
+				    })
+				in
+				    Source
+

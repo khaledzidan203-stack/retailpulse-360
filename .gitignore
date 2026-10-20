@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.sqlite
+*.db
+**/.pbi/
+build/
+data/processed/
+OUTPUT.txt
+*.log
+*.bak
+*.zip

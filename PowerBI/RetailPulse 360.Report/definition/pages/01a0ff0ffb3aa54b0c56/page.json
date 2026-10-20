@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "01a0ff0ffb3aa54b0c56",
+  "displayName": "04 Like-for-Like & Store Cohorts",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600
+}

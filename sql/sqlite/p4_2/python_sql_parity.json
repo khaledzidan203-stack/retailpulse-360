@@ -1,0 +1,678 @@
+{
+  "checked": 13,
+  "financial_unit": "integer_cents",
+  "fraction_behavior": "[numerator,denominator] exact; null when denominator <=0",
+  "generation": "G0004",
+  "scenario_results": [
+    {
+      "achievement_fraction": [
+        2079297637,
+        1985547059
+      ],
+      "aligned_budget_cents": 1985547059,
+      "basket_fraction_cents": [
+        2079297637,
+        715790
+      ],
+      "budget_gap_cents": 93750578,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        285961346,
+        1738620479
+      ],
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 2085333403,
+      "marketplace_raw_cents": 292083700,
+      "matched_digital_cents": 285961346,
+      "matched_retail_cents": 1738620479,
+      "mode": "YTD",
+      "official_cents": 2079297637,
+      "period_days": 354,
+      "python_sql_parity": "PASS",
+      "returns_cents": 6035766,
+      "selected_end": "2026-12-31",
+      "source_lag_days": -7,
+      "start": "2026-01-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 18,
+      "strict_growth_fraction": [
+        55337820,
+        1327849612
+      ],
+      "strict_py_cents": 1327849612,
+      "strict_ty_cents": 1383187432,
+      "total_growth_fraction": [
+        464938543,
+        1614359094
+      ],
+      "total_py_cents": 1614359094,
+      "transactions": 715790,
+      "units": 1430358,
+      "units_per_transaction_fraction": [
+        1430358,
+        715790
+      ],
+      "window": "YTD_2026"
+    },
+    {
+      "achievement_fraction": [
+        1680038170,
+        1678098156
+      ],
+      "aligned_budget_cents": 1678098156,
+      "basket_fraction_cents": [
+        1680038170,
+        578820
+      ],
+      "budget_gap_cents": 1940014,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        222314880,
+        1348567967
+      ],
+      "effective_official_end": "2025-12-31",
+      "gross_cents": 1685076823,
+      "marketplace_raw_cents": 222314880,
+      "matched_digital_cents": 222314880,
+      "matched_retail_cents": 1348567967,
+      "mode": "YTD",
+      "official_cents": 1680038170,
+      "period_days": 365,
+      "python_sql_parity": "PASS",
+      "returns_cents": 5038653,
+      "selected_end": "2025-12-31",
+      "source_lag_days": -7,
+      "start": "2025-01-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 0,
+      "strict_growth_fraction": null,
+      "strict_py_cents": null,
+      "strict_ty_cents": null,
+      "total_growth_fraction": null,
+      "total_py_cents": null,
+      "transactions": 578820,
+      "units": 1151926,
+      "units_per_transaction_fraction": [
+        1151926,
+        578820
+      ],
+      "window": "YTD_2025_NO_PY"
+    },
+    {
+      "achievement_fraction": [
+        128455679,
+        123284746
+      ],
+      "aligned_budget_cents": 123284746,
+      "basket_fraction_cents": [
+        128455679,
+        44200
+      ],
+      "budget_gap_cents": 5170933,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        18135848,
+        107642158
+      ],
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 128822063,
+      "marketplace_raw_cents": 24258202,
+      "matched_digital_cents": 18135848,
+      "matched_retail_cents": 107642158,
+      "mode": "MTD",
+      "official_cents": 128455679,
+      "period_days": 20,
+      "python_sql_parity": "PASS",
+      "returns_cents": 366384,
+      "selected_end": "2026-12-31",
+      "source_lag_days": -7,
+      "start": "2026-12-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 23,
+      "strict_growth_fraction": [
+        4712597,
+        106898071
+      ],
+      "strict_py_cents": 106898071,
+      "strict_ty_cents": 111610668,
+      "total_growth_fraction": [
+        13781470,
+        114674209
+      ],
+      "total_py_cents": 114674209,
+      "transactions": 44200,
+      "units": 88140,
+      "units_per_transaction_fraction": [
+        88140,
+        44200
+      ],
+      "window": "MTD_DEC_2026"
+    },
+    {
+      "achievement_fraction": [
+        13872570,
+        12328448
+      ],
+      "aligned_budget_cents": 12328448,
+      "basket_fraction_cents": [
+        13872570,
+        4804
+      ],
+      "budget_gap_cents": 1544122,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        18135848,
+        107642158
+      ],
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 13903254,
+      "marketplace_raw_cents": 18135848,
+      "matched_digital_cents": 18135848,
+      "matched_retail_cents": 107642158,
+      "mode": "WTD",
+      "official_cents": 13872570,
+      "period_days": 2,
+      "python_sql_parity": "PASS",
+      "returns_cents": 30684,
+      "selected_end": "2026-12-20",
+      "source_lag_days": -7,
+      "start": "2026-12-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 24,
+      "strict_growth_fraction": [
+        553423,
+        12376217
+      ],
+      "strict_py_cents": 12376217,
+      "strict_ty_cents": 12929640,
+      "total_growth_fraction": [
+        1172626,
+        12699944
+      ],
+      "total_py_cents": 12699944,
+      "transactions": 4804,
+      "units": 10064,
+      "units_per_transaction_fraction": [
+        10064,
+        4804
+      ],
+      "window": "WTD_DEC20_2026"
+    },
+    {
+      "achievement_fraction": [
+        540547715,
+        519426236
+      ],
+      "aligned_budget_cents": 519426236,
+      "basket_fraction_cents": [
+        540547715,
+        186656
+      ],
+      "budget_gap_cents": 21121479,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        74703447,
+        452920769
+      ],
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 542169500,
+      "marketplace_raw_cents": 80825801,
+      "matched_digital_cents": 74703447,
+      "matched_retail_cents": 452920769,
+      "mode": "QTD",
+      "official_cents": 540547715,
+      "period_days": 81,
+      "python_sql_parity": "PASS",
+      "returns_cents": 1621785,
+      "selected_end": "2026-12-29",
+      "source_lag_days": -7,
+      "start": "2026-10-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 22,
+      "strict_growth_fraction": [
+        20655016,
+        428885655
+      ],
+      "strict_py_cents": 428885655,
+      "strict_ty_cents": 449540671,
+      "total_growth_fraction": [
+        82635151,
+        457912564
+      ],
+      "total_py_cents": 457912564,
+      "transactions": 186656,
+      "units": 371906,
+      "units_per_transaction_fraction": [
+        371906,
+        186656
+      ],
+      "window": "QTD_DEC_2026"
+    },
+    {
+      "achievement_fraction": [
+        206852910,
+        197147398
+      ],
+      "aligned_budget_cents": 197147398,
+      "basket_fraction_cents": [
+        206852910,
+        71383
+      ],
+      "budget_gap_cents": 9705512,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        28960020,
+        173693197
+      ],
+      "effective_official_end": "2026-11-30",
+      "gross_cents": 207468920,
+      "marketplace_raw_cents": 28960020,
+      "matched_digital_cents": 28960020,
+      "matched_retail_cents": 173693197,
+      "mode": "MTD",
+      "official_cents": 206852910,
+      "period_days": 30,
+      "python_sql_parity": "PASS",
+      "returns_cents": 616010,
+      "selected_end": "2026-11-30",
+      "source_lag_days": -7,
+      "start": "2026-11-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 23,
+      "strict_growth_fraction": [
+        6959912,
+        170584930
+      ],
+      "strict_py_cents": 170584930,
+      "strict_ty_cents": 177544842,
+      "total_growth_fraction": [
+        31657034,
+        175195876
+      ],
+      "total_py_cents": 175195876,
+      "transactions": 71383,
+      "units": 142651,
+      "units_per_transaction_fraction": [
+        142651,
+        71383
+      ],
+      "window": "MTD_NOV_2026"
+    },
+    {
+      "achievement_fraction": [
+        147300376,
+        138739996
+      ],
+      "aligned_budget_cents": 138739996,
+      "basket_fraction_cents": [
+        147300376,
+        50939
+      ],
+      "budget_gap_cents": 8560380,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        20388392,
+        123283851
+      ],
+      "effective_official_end": "2026-06-03",
+      "gross_cents": 147746509,
+      "marketplace_raw_cents": 20388392,
+      "matched_digital_cents": 20388392,
+      "matched_retail_cents": 123283851,
+      "mode": "CUSTOM",
+      "official_cents": 147300376,
+      "period_days": 24,
+      "python_sql_parity": "PASS",
+      "returns_cents": 446133,
+      "selected_end": "2026-06-03",
+      "source_lag_days": -7,
+      "start": "2026-05-11",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 22,
+      "strict_growth_fraction": [
+        3118545,
+        113954658
+      ],
+      "strict_py_cents": 113954658,
+      "strict_ty_cents": 117073203,
+      "total_growth_fraction": [
+        33345718,
+        113954658
+      ],
+      "total_py_cents": 113954658,
+      "transactions": 50939,
+      "units": 101405,
+      "units_per_transaction_fraction": [
+        101405,
+        50939
+      ],
+      "window": "CUSTOM_PARTIAL_2026"
+    },
+    {
+      "achievement_fraction": [
+        107642158,
+        103183182
+      ],
+      "aligned_budget_cents": 103183182,
+      "basket_fraction_cents": [
+        107642158,
+        35820
+      ],
+      "budget_gap_cents": 4458976,
+      "channels": [
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        18135848,
+        107642158
+      ],
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 107940378,
+      "marketplace_raw_cents": 24258202,
+      "matched_digital_cents": 18135848,
+      "matched_retail_cents": 107642158,
+      "mode": "MTD",
+      "official_cents": 107642158,
+      "period_days": 20,
+      "python_sql_parity": "PASS",
+      "returns_cents": 298220,
+      "selected_end": "2026-12-31",
+      "source_lag_days": -7,
+      "start": "2026-12-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 23,
+      "strict_growth_fraction": [
+        4225883,
+        89421754
+      ],
+      "strict_py_cents": 89421754,
+      "strict_ty_cents": 93647637,
+      "total_growth_fraction": [
+        11773734,
+        95868424
+      ],
+      "total_py_cents": 95868424,
+      "transactions": 35820,
+      "units": 71491,
+      "units_per_transaction_fraction": [
+        71491,
+        35820
+      ],
+      "window": "RETAIL_MTD_2026"
+    },
+    {
+      "achievement_fraction": [
+        20813521,
+        20101564
+      ],
+      "aligned_budget_cents": 20101564,
+      "basket_fraction_cents": [
+        20813521,
+        8380
+      ],
+      "budget_gap_cents": 711957,
+      "channels": [
+        "PROGRAM"
+      ],
+      "digital_share_fraction": null,
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 20881685,
+      "marketplace_raw_cents": 24258202,
+      "matched_digital_cents": null,
+      "matched_retail_cents": null,
+      "mode": "MTD",
+      "official_cents": 20813521,
+      "period_days": 20,
+      "python_sql_parity": "PASS",
+      "returns_cents": 68164,
+      "selected_end": "2026-12-31",
+      "source_lag_days": -7,
+      "start": "2026-12-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 23,
+      "strict_growth_fraction": [
+        486714,
+        17476317
+      ],
+      "strict_py_cents": 17476317,
+      "strict_ty_cents": 17963031,
+      "total_growth_fraction": [
+        2007736,
+        18805785
+      ],
+      "total_py_cents": 18805785,
+      "transactions": 8380,
+      "units": 16649,
+      "units_per_transaction_fraction": [
+        16649,
+        8380
+      ],
+      "window": "PROGRAM_MTD_2026"
+    },
+    {
+      "achievement_fraction": [
+        15900166,
+        14951818
+      ],
+      "aligned_budget_cents": 14951818,
+      "basket_fraction_cents": [
+        15900166,
+        8481
+      ],
+      "budget_gap_cents": 948348,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        2204693,
+        13036681
+      ],
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 15949137,
+      "marketplace_raw_cents": 2204693,
+      "matched_digital_cents": 2204693,
+      "matched_retail_cents": 13036681,
+      "mode": "YTD",
+      "official_cents": 15900166,
+      "period_days": 354,
+      "python_sql_parity": "PASS",
+      "returns_cents": 48971,
+      "selected_end": "2026-12-31",
+      "source_lag_days": -7,
+      "start": "2026-01-01",
+      "store_filter": [
+        "store",
+        "S019"
+      ],
+      "store_population": 1,
+      "strict_eligible_stores": 0,
+      "strict_growth_fraction": null,
+      "strict_py_cents": 0,
+      "strict_ty_cents": 0,
+      "total_growth_fraction": [
+        -6024354,
+        21924520
+      ],
+      "total_py_cents": 21924520,
+      "transactions": 8481,
+      "units": 17415,
+      "units_per_transaction_fraction": [
+        17415,
+        8481
+      ],
+      "window": "CLOSED_STORE"
+    },
+    {
+      "achievement_fraction": [
+        83167734,
+        81549861
+      ],
+      "aligned_budget_cents": 81549861,
+      "basket_fraction_cents": [
+        83167734,
+        25567
+      ],
+      "budget_gap_cents": 1617873,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        11538248,
+        70072438
+      ],
+      "effective_official_end": "2026-10-09",
+      "gross_cents": 83433735,
+      "marketplace_raw_cents": 11538248,
+      "matched_digital_cents": 11538248,
+      "matched_retail_cents": 70072438,
+      "mode": "CUSTOM",
+      "official_cents": 83167734,
+      "period_days": 39,
+      "python_sql_parity": "PASS",
+      "returns_cents": 266001,
+      "selected_end": "2026-10-09",
+      "source_lag_days": -7,
+      "start": "2026-09-01",
+      "store_filter": [
+        "region",
+        "R02"
+      ],
+      "store_population": 8,
+      "strict_eligible_stores": 7,
+      "strict_growth_fraction": [
+        3127202,
+        79639844
+      ],
+      "strict_py_cents": 79639844,
+      "strict_ty_cents": 82767046,
+      "total_growth_fraction": [
+        3527890,
+        79639844
+      ],
+      "total_py_cents": 79639844,
+      "transactions": 25567,
+      "units": 51362,
+      "units_per_transaction_fraction": [
+        51362,
+        25567
+      ],
+      "window": "REGION_SCOPE"
+    },
+    {
+      "achievement_fraction": null,
+      "aligned_budget_cents": 0,
+      "basket_fraction_cents": null,
+      "budget_gap_cents": 0,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": null,
+      "effective_official_end": "2026-12-20",
+      "gross_cents": 0,
+      "marketplace_raw_cents": 6122354,
+      "matched_digital_cents": 0,
+      "matched_retail_cents": 0,
+      "mode": "CUSTOM",
+      "official_cents": 0,
+      "period_days": 0,
+      "python_sql_parity": "PASS",
+      "returns_cents": 0,
+      "selected_end": "2026-12-27",
+      "source_lag_days": -7,
+      "start": "2026-12-21",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 0,
+      "strict_growth_fraction": null,
+      "strict_py_cents": null,
+      "strict_ty_cents": null,
+      "total_growth_fraction": null,
+      "total_py_cents": null,
+      "transactions": 0,
+      "units": 0,
+      "units_per_transaction_fraction": null,
+      "window": "FUTURE_DIGITAL_AHEAD"
+    },
+    {
+      "achievement_fraction": [
+        4014170,
+        3506369
+      ],
+      "aligned_budget_cents": 3506369,
+      "basket_fraction_cents": [
+        4014170,
+        1370
+      ],
+      "budget_gap_cents": 507801,
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "digital_share_fraction": [
+        182090,
+        1321347
+      ],
+      "effective_official_end": "2025-01-04",
+      "gross_cents": 4032369,
+      "marketplace_raw_cents": 182090,
+      "matched_digital_cents": 182090,
+      "matched_retail_cents": 1321347,
+      "mode": "WTD",
+      "official_cents": 4014170,
+      "period_days": 1,
+      "python_sql_parity": "PASS",
+      "returns_cents": 18199,
+      "selected_end": "2025-01-04",
+      "source_lag_days": -7,
+      "start": "2025-01-01",
+      "store_filter": null,
+      "store_population": 30,
+      "strict_eligible_stores": 0,
+      "strict_growth_fraction": null,
+      "strict_py_cents": null,
+      "strict_ty_cents": null,
+      "total_growth_fraction": null,
+      "total_py_cents": null,
+      "transactions": 1370,
+      "units": 2853,
+      "units_per_transaction_fraction": [
+        2853,
+        1370
+      ],
+      "window": "EARLY_2025_WTD"
+    }
+  ]
+}

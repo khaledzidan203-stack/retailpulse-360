@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "621e1c2d7c22c2fa2c25",
+  "displayName": "03 Quarterly & Year-over-Year",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600
+}

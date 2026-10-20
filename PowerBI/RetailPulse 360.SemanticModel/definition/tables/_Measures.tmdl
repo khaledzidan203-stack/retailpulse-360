@@ -1,0 +1,382 @@
+table _Measures
+	lineageTag: d4739f6d-53c2-46b1-8ada-a5d36ec95bc0
+
+	measure 'RP Official As Of' = MAX('generation_metadata'[official_asof])
+		formatString: yyyy-MM-dd
+		displayFolder: 00 Source Clock
+		lineageTag: bed10620-a3b3-4a99-a43d-c1238eef57b5
+
+	measure 'RP Marketplace As Of' = MAX('generation_metadata'[marketplace_asof])
+		formatString: yyyy-MM-dd
+		displayFolder: 00 Source Clock
+		lineageTag: 767815a9-f593-49f8-a599-8816a8dcbb12
+
+	measure 'KPI-001 Retail Net Sales' = CALCULATE(DIVIDE(SUM('fact_sales_daily'[net_sales_cents]),100), KEEPFILTERS('fact_sales_daily'[channel_key] = "RETAIL"), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof]))))
+		formatString: #,0.00
+		displayFolder: 01 Official
+		lineageTag: a300ff97-d0c8-48f1-9e34-2ee95c319ded
+
+	measure 'KPI-002 Program Net Sales' = CALCULATE(DIVIDE(SUM('fact_sales_daily'[net_sales_cents]),100), KEEPFILTERS('fact_sales_daily'[channel_key] = "PROGRAM"), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof]))))
+		formatString: #,0.00
+		displayFolder: 01 Official
+		lineageTag: eb16fb8e-a416-4032-ab06-2c12b002f712
+
+	measure 'KPI-003 Official Net Sales' = [KPI-001 Retail Net Sales] + [KPI-002 Program Net Sales]
+		formatString: #,0.00
+		displayFolder: 01 Official
+		lineageTag: c1d96b16-fb54-4d93-9cf5-21ff2c9aa925
+
+	measure 'KPI-004 Official Gross Sales' = CALCULATE(DIVIDE(SUM('fact_sales_daily'[gross_sales_cents]),100), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof]))))
+		formatString: #,0.00
+		displayFolder: 01 Official
+		lineageTag: ea9f738e-f672-4b96-b8d8-97b1349eed39
+
+	measure 'KPI-005 Returns Amount' = CALCULATE(DIVIDE(SUM('fact_sales_daily'[returns_amount_cents]),100), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof]))))
+		formatString: #,0.00
+		displayFolder: 01 Official
+		lineageTag: 53420d27-50b8-463c-8df3-2aaf9e2eef3d
+
+	measure 'KPI-006 Effective Budget' = CALCULATE(DIVIDE(SUM('fact_budget_daily'[allocated_budget_cents]),100), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof]))))
+		formatString: #,0.00
+		displayFolder: 02 Budget
+		lineageTag: 6cf210ac-5a0f-4093-bd99-b5b17cb8ba3f
+
+	measure 'KPI-007 Budget Gap' = [KPI-003 Official Net Sales] - [KPI-006 Effective Budget]
+		formatString: #,0.00
+		displayFolder: 02 Budget
+		lineageTag: 1ec75253-bb5c-44e2-b5d9-2dd4ad5c0c41
+
+	measure 'KPI-008 Achievement' = DIVIDE([KPI-003 Official Net Sales],[KPI-006 Effective Budget])
+		formatString: 0.00%
+		displayFolder: 02 Budget
+		lineageTag: 474c3556-aecc-423e-ae74-ea2e1fa0ba3b
+
+	measure 'KPI-009 Channel Mix' = VAR _Base = CALCULATE([KPI-003 Official Net Sales],REMOVEFILTERS('dim_channel')) RETURN IF(_Base > 0, DIVIDE([KPI-003 Official Net Sales],_Base))
+		formatString: 0.00%
+		displayFolder: 03 Channels
+		lineageTag: c1974623-a6f0-41ad-9699-3d3ccf2db588
+
+	measure 'KPI-010 Transactions' = CALCULATE(SUM('fact_sales_daily'[transactions]), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof]))))
+		formatString: #,0
+		displayFolder: 04 Customers
+		lineageTag: 8ac77fda-a0ae-4405-b3b4-22a945461716
+
+	measure 'KPI-011 Units' = CALCULATE(SUM('fact_sales_daily'[units]), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof]))))
+		formatString: #,0
+		displayFolder: 04 Customers
+		lineageTag: 4aec0b04-1734-4d38-8fbd-8039fae7bc81
+
+	measure 'KPI-012 Average Basket' = VAR _T=[KPI-010 Transactions] RETURN IF(_T>0,DIVIDE([KPI-003 Official Net Sales],_T))
+		formatString: #,0.00
+		displayFolder: 04 Customers
+		lineageTag: 5f511e9c-1cdb-4ff6-bdb2-2b7b5992509b
+
+	measure 'KPI-013 Units Per Transaction' = VAR _T=[KPI-010 Transactions] RETURN IF(_T>0,DIVIDE([KPI-011 Units],_T))
+		formatString: #,0.00
+		displayFolder: 04 Customers
+		lineageTag: de939f09-1aed-4119-8158-b39e5009994e
+
+	measure 'KPI-014 Official PY Sales' =
+			VAR _AsOf = MAX('generation_metadata'[official_asof])
+			VAR _First = MIN('dim_date'[calendar_date])
+			VAR _Last = MIN(MAX('dim_date'[calendar_date]), _AsOf)
+			VAR _TY = FILTER(ALLSELECTED('dim_date'), 'dim_date'[calendar_date] >= _First && 'dim_date'[calendar_date] <= _Last)
+			VAR _TYKeys = SELECTCOLUMNS(_TY, "Key", 'dim_date'[date_key])
+			VAR _PYKeys = SELECTCOLUMNS(_TY, "Key", VALUE(FORMAT(EDATE('dim_date'[calendar_date],-12), "yyyymmdd")))
+			VAR _CanCompare = YEAR(_First) >= 2026 && YEAR(_Last) >= 2026 && _First <= _Last && COUNTROWS(_TY) = COUNTROWS(_PYKeys)
+			RETURN IF(NOT(_CanCompare), BLANK(), CALCULATE([KPI-003 Official Net Sales], REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'dim_date'[date_key])))
+		formatString: #,0.00
+		displayFolder: 05 Comparisons
+		lineageTag: 7eeaa80b-0af3-449d-ac85-36bc5e575c77
+
+	measure 'KPI-015 Total YoY Growth' = VAR _PY=[KPI-014 Official PY Sales] RETURN IF(_PY > 0, DIVIDE([KPI-003 Official Net Sales],_PY)-1)
+		formatString: 0.00%
+		displayFolder: 05 Comparisons
+		lineageTag: 4101473a-69e1-4aab-89e4-a758ecf83a1a
+
+	measure 'KPI-016 Strict LFL TY' =
+			VAR _AsOf = MAX('generation_metadata'[official_asof])
+			VAR _First = MIN('dim_date'[calendar_date])
+			VAR _Last = MIN(MAX('dim_date'[calendar_date]), _AsOf)
+			VAR _TY = FILTER(ALLSELECTED('dim_date'), 'dim_date'[calendar_date] >= _First && 'dim_date'[calendar_date] <= _Last)
+			VAR _TYKeys = SELECTCOLUMNS(_TY, "Key", 'dim_date'[date_key])
+			VAR _PYKeys = SELECTCOLUMNS(_TY, "Key", VALUE(FORMAT(EDATE('dim_date'[calendar_date],-12), "yyyymmdd")))
+			VAR _CanCompare = YEAR(_First) >= 2026 && YEAR(_Last) >= 2026 && _First <= _Last && COUNTROWS(_TY) = COUNTROWS(_PYKeys)
+			VAR _Channels = VALUES('dim_channel'[channel_key])
+			VAR _N = COUNTROWS(_TY)
+			VAR _NC = COUNTROWS(_Channels)
+			VAR _Eligible =
+			FILTER(
+			VALUES('dim_store'[store_key]),
+			VAR _OpTY = CALCULATE(COUNTROWS('store_operating_calendar'), REMOVEFILTERS('dim_date'), TREATAS(_TYKeys,'store_operating_calendar'[date_key]), 'store_operating_calendar'[is_operating] = 1)
+			VAR _OpPY = CALCULATE(COUNTROWS('store_operating_calendar'), REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'store_operating_calendar'[date_key]), 'store_operating_calendar'[is_operating] = 1)
+			VAR _RepTY = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), TREATAS(_TYKeys,'source_coverage_official'[date_key]), TREATAS(_Channels,'source_coverage_official'[channel_key]), 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			VAR _RepPY = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'source_coverage_official'[date_key]), TREATAS(_Channels,'source_coverage_official'[channel_key]), 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			RETURN _OpTY = _N && _OpPY = _N && _RepTY = _N * _NC && _RepPY = _N * _NC
+			)
+			RETURN IF(NOT(_CanCompare) || COUNTROWS(_Eligible) = 0, BLANK(), CALCULATE([KPI-003 Official Net Sales], REMOVEFILTERS('dim_date'), TREATAS(_TYKeys,'dim_date'[date_key]), KEEPFILTERS(_Eligible)))
+		formatString: #,0.00
+		displayFolder: 06 Strict LFL
+		lineageTag: efec5c4c-f2fd-4a30-8e00-e0a3803ebf7b
+
+	measure 'KPI-017 Strict LFL PY' =
+			VAR _AsOf = MAX('generation_metadata'[official_asof])
+			VAR _First = MIN('dim_date'[calendar_date])
+			VAR _Last = MIN(MAX('dim_date'[calendar_date]), _AsOf)
+			VAR _TY = FILTER(ALLSELECTED('dim_date'), 'dim_date'[calendar_date] >= _First && 'dim_date'[calendar_date] <= _Last)
+			VAR _TYKeys = SELECTCOLUMNS(_TY, "Key", 'dim_date'[date_key])
+			VAR _PYKeys = SELECTCOLUMNS(_TY, "Key", VALUE(FORMAT(EDATE('dim_date'[calendar_date],-12), "yyyymmdd")))
+			VAR _CanCompare = YEAR(_First) >= 2026 && YEAR(_Last) >= 2026 && _First <= _Last && COUNTROWS(_TY) = COUNTROWS(_PYKeys)
+			VAR _Channels = VALUES('dim_channel'[channel_key])
+			VAR _N = COUNTROWS(_TY)
+			VAR _NC = COUNTROWS(_Channels)
+			VAR _Eligible =
+			FILTER(
+			VALUES('dim_store'[store_key]),
+			VAR _OpTY = CALCULATE(COUNTROWS('store_operating_calendar'), REMOVEFILTERS('dim_date'), TREATAS(_TYKeys,'store_operating_calendar'[date_key]), 'store_operating_calendar'[is_operating] = 1)
+			VAR _OpPY = CALCULATE(COUNTROWS('store_operating_calendar'), REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'store_operating_calendar'[date_key]), 'store_operating_calendar'[is_operating] = 1)
+			VAR _RepTY = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), TREATAS(_TYKeys,'source_coverage_official'[date_key]), TREATAS(_Channels,'source_coverage_official'[channel_key]), 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			VAR _RepPY = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'source_coverage_official'[date_key]), TREATAS(_Channels,'source_coverage_official'[channel_key]), 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			RETURN _OpTY = _N && _OpPY = _N && _RepTY = _N * _NC && _RepPY = _N * _NC
+			)
+			RETURN IF(NOT(_CanCompare) || COUNTROWS(_Eligible) = 0, BLANK(), CALCULATE([KPI-003 Official Net Sales], REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'dim_date'[date_key]), KEEPFILTERS(_Eligible)))
+		formatString: #,0.00
+		displayFolder: 06 Strict LFL
+		lineageTag: ad180e31-10b8-4547-b005-4e7a35dca0e6
+
+	measure 'KPI-018 Strict LFL Growth' = VAR _PY=[KPI-017 Strict LFL PY] RETURN IF(_PY > 0, DIVIDE([KPI-016 Strict LFL TY],_PY)-1)
+		formatString: 0.00%
+		displayFolder: 06 Strict LFL
+		lineageTag: 48632ba5-17fa-44b1-bb93-65d8319b9cb2
+
+	measure 'KPI-019 Negative Gap Contribution' =
+			VAR _Stores=ADDCOLUMNS(
+			    CROSSJOIN(ALLSELECTED('dim_store'[store_key]),ALLSELECTED('dim_channel'[channel_key])),
+			    "Gap",[KPI-007 Budget Gap])
+			VAR _Selected=ADDCOLUMNS(
+			    CROSSJOIN(VALUES('dim_store'[store_key]),VALUES('dim_channel'[channel_key])),
+			    "Gap",[KPI-007 Budget Gap])
+			VAR _Total=SUMX(FILTER(_Stores,[Gap]<0),-[Gap])
+			VAR _Part=SUMX(FILTER(_Selected,[Gap]<0),-[Gap])
+			RETURN IF(_Total>0,DIVIDE(_Part,_Total))
+		formatString: 0.00%
+		displayFolder: 02 Budget
+		lineageTag: eabbd685-78c8-4b3e-b1d6-b17a9a95e9dc
+
+	measure 'KPI-020 Operating Stores' = COALESCE(CALCULATE(DISTINCTCOUNT('store_operating_calendar'[store_key]), 'store_operating_calendar'[is_operating] = 1, KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof])))),0)
+		formatString: #,0
+		displayFolder: 07 Coverage
+		lineageTag: 3f15365f-af90-44df-ba09-668a0ac5f86c
+
+	measure 'KPI-021 Reporting Stores' = COALESCE(CALCULATE(DISTINCTCOUNT('source_coverage_official'[store_key]), 'source_coverage_official'[coverage_state] IN {"REPORTED_VALUE","REPORTED_ZERO"}, KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof])))),0)
+		formatString: #,0
+		displayFolder: 07 Coverage
+		lineageTag: ba3bfd7a-1105-455e-89cf-4ac1e02257fa
+
+	measure 'KPI-022 WTD Official Sales' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, (_End - MOD(WEEKDAY(_End,2)+1,7)))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-003 Official Net Sales], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: b04e4a9d-33bf-4acc-8dc3-2b92ed9332a3
+
+	measure 'RP WTD Effective Budget' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, (_End - MOD(WEEKDAY(_End,2)+1,7)))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-006 Effective Budget], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: ae7f9ee3-8a79-49dd-8afa-0de2ff325e04
+
+	measure 'KPI-023 MTD Official Sales' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, DATE(YEAR(_End),MONTH(_End),1))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-003 Official Net Sales], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: fdfb358b-3d29-4daa-b059-0f419eace997
+
+	measure 'RP MTD Effective Budget' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, DATE(YEAR(_End),MONTH(_End),1))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-006 Effective Budget], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: 9945a2bc-5468-4723-9cb5-b772f5975d87
+
+	measure 'KPI-024 QTD Official Sales' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, DATE(YEAR(_End),1+3*INT((MONTH(_End)-1)/3),1))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-003 Official Net Sales], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: 00a568c0-b1b3-4d35-a51f-5db77c7d178c
+
+	measure 'RP QTD Effective Budget' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, DATE(YEAR(_End),1+3*INT((MONTH(_End)-1)/3),1))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-006 Effective Budget], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: 341e7dd5-32e2-4ef0-8c25-3f39e28ad935
+
+	measure 'KPI-025 YTD Official Sales' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, DATE(YEAR(_End),1,1))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-003 Official Net Sales], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: 6a2ecde4-b039-4a6e-9795-d57c1ef0f1a3
+
+	measure 'RP YTD Effective Budget' =
+			VAR _End = MIN(MAX('dim_date'[calendar_date]),MAX('generation_metadata'[official_asof]))
+			VAR _SelectedStart = MIN('dim_date'[calendar_date])
+			VAR _Start = MAX(_SelectedStart, DATE(YEAR(_End),1,1))
+			RETURN IF(_Start > _End, BLANK(), CALCULATE([KPI-006 Effective Budget], FILTER(ALL('dim_date'), 'dim_date'[calendar_date] >= _Start && 'dim_date'[calendar_date] <= _End)))
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: 7512569b-44df-4623-96aa-733eb17d4f95
+
+	measure 'KPI-026 Selected Period Budget' = [KPI-006 Effective Budget]
+		formatString: #,0.00
+		displayFolder: 08 Time Intelligence
+		lineageTag: c6265e8e-4430-45f4-b105-19a74949e1cb
+
+	measure 'KPI-027 Marketplace Attributed Sales' = CALCULATE(DIVIDE(SUM('fact_marketplace_daily'[attributed_retail_net_sales_cents]),100), REMOVEFILTERS('dim_channel'), KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[marketplace_asof]))))
+		formatString: #,0.00
+		displayFolder: 09 Digital
+		lineageTag: 47f85b34-3b4a-47f1-bed4-6c16f8ea46c4
+
+	measure 'KPI-028 Digital Matched Through' = VAR _Through=MIN(MIN([RP Official As Of],[RP Marketplace As Of]),MAX('dim_date'[calendar_date])) RETURN IF(_Through >= MIN('dim_date'[calendar_date]),_Through)
+		formatString: yyyy-MM-dd
+		displayFolder: 09 Digital
+		lineageTag: 16cdadd0-2bd1-4acb-836d-bed79d18bbdd
+
+	measure 'KPI-029 Matched Marketplace Sales' =
+			VAR _RetailAllowed = CONTAINS(VALUES('dim_channel'[channel_key]),'dim_channel'[channel_key],"RETAIL")
+			VAR _MatchedUntil = MIN(MAX('generation_metadata'[official_asof]), MAX('generation_metadata'[marketplace_asof]))
+			VAR _SDate = MIN('dim_date'[calendar_date])
+			VAR _Pairs = CALCULATETABLE(SUMMARIZE('fact_marketplace_daily','fact_marketplace_daily'[store_key],'fact_marketplace_daily'[date_key]), KEEPFILTERS('dim_date'[calendar_date] <= _MatchedUntil))
+			VAR _Result = SUMX(_Pairs,
+			VAR _S = 'fact_marketplace_daily'[store_key]
+			VAR _D = 'fact_marketplace_daily'[date_key]
+			VAR _Coverage = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), 'source_coverage_official'[store_key] = _S, 'source_coverage_official'[date_key] = _D, 'source_coverage_official'[channel_key] = "RETAIL", 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			VAR _RetailRow = CALCULATE(COUNTROWS('fact_sales_daily'), REMOVEFILTERS('dim_date'), 'fact_sales_daily'[store_key] = _S, 'fact_sales_daily'[date_key] = _D, 'fact_sales_daily'[channel_key] = "RETAIL")
+			VAR _Amt = CALCULATE(SUM('fact_marketplace_daily'[attributed_retail_net_sales_cents]), REMOVEFILTERS('dim_date'), 'fact_marketplace_daily'[store_key] = _S, 'fact_marketplace_daily'[date_key] = _D)
+			RETURN IF(_Coverage > 0 && _RetailRow > 0, _Amt, BLANK())
+			)
+			RETURN IF(NOT(_RetailAllowed) || _SDate > _MatchedUntil, BLANK(), DIVIDE(_Result,100))
+		formatString: #,0.00
+		displayFolder: 09 Digital
+		lineageTag: f7e6eaab-7ccc-48ea-a6e2-44caeebf0754
+
+	measure 'KPI-030 Matched Retail Sales' =
+			VAR _RetailAllowed = CONTAINS(VALUES('dim_channel'[channel_key]),'dim_channel'[channel_key],"RETAIL")
+			VAR _MatchedUntil = MIN(MAX('generation_metadata'[official_asof]), MAX('generation_metadata'[marketplace_asof]))
+			VAR _SDate = MIN('dim_date'[calendar_date])
+			VAR _Pairs = CALCULATETABLE(SUMMARIZE('fact_marketplace_daily','fact_marketplace_daily'[store_key],'fact_marketplace_daily'[date_key]), KEEPFILTERS('dim_date'[calendar_date] <= _MatchedUntil))
+			VAR _Result = SUMX(_Pairs,
+			VAR _S = 'fact_marketplace_daily'[store_key]
+			VAR _D = 'fact_marketplace_daily'[date_key]
+			VAR _Coverage = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), 'source_coverage_official'[store_key] = _S, 'source_coverage_official'[date_key] = _D, 'source_coverage_official'[channel_key] = "RETAIL", 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			VAR _RetailRow = CALCULATE(COUNTROWS('fact_sales_daily'), REMOVEFILTERS('dim_date'), 'fact_sales_daily'[store_key] = _S, 'fact_sales_daily'[date_key] = _D, 'fact_sales_daily'[channel_key] = "RETAIL")
+			VAR _Amt = CALCULATE(SUM('fact_sales_daily'[net_sales_cents]), REMOVEFILTERS('dim_date'), 'fact_sales_daily'[store_key] = _S, 'fact_sales_daily'[date_key] = _D, 'fact_sales_daily'[channel_key] = "RETAIL")
+			RETURN IF(_Coverage > 0 && _RetailRow > 0, _Amt, BLANK())
+			)
+			RETURN IF(NOT(_RetailAllowed) || _SDate > _MatchedUntil, BLANK(), DIVIDE(_Result,100))
+		formatString: #,0.00
+		displayFolder: 09 Digital
+		lineageTag: 1f4a5117-33dc-4b81-8291-31a3c68f93de
+
+	measure 'KPI-031 Marketplace Contribution' = VAR _Retail=[KPI-030 Matched Retail Sales] RETURN IF(_Retail>0,DIVIDE([KPI-029 Matched Marketplace Sales],_Retail))
+		formatString: 0.00%
+		displayFolder: 09 Digital
+		lineageTag: bc2c7712-ca9f-4ae0-8517-06acd98f6483
+
+	measure 'KPI-032 Source Lag Days' = DATEDIFF([RP Marketplace As Of],[RP Official As Of],DAY)
+		formatString: #,0
+		displayFolder: 00 Source Clock
+		lineageTag: 2c23b718-f5b8-4dff-9fa5-178225d014ba
+
+	measure 'KPI-033 Missing Expected Rows' = COALESCE(CALCULATE(COUNTROWS('source_coverage_official'),'source_coverage_official'[coverage_state] = "MISSING_EXPECTED",KEEPFILTERS(FILTER(ALL('dim_date'[calendar_date]), 'dim_date'[calendar_date] <= MAX('generation_metadata'[official_asof])))),0)
+		formatString: #,0
+		displayFolder: 07 Coverage
+		lineageTag: fbf0e90c-6e0b-4fa9-9656-14a0c91d4d14
+
+	measure 'KPI-034 Strict Eligible Stores' =
+			VAR _AsOf = MAX('generation_metadata'[official_asof])
+			VAR _First = MIN('dim_date'[calendar_date])
+			VAR _Last = MIN(MAX('dim_date'[calendar_date]), _AsOf)
+			VAR _TY = FILTER(ALLSELECTED('dim_date'), 'dim_date'[calendar_date] >= _First && 'dim_date'[calendar_date] <= _Last)
+			VAR _TYKeys = SELECTCOLUMNS(_TY, "Key", 'dim_date'[date_key])
+			VAR _PYKeys = SELECTCOLUMNS(_TY, "Key", VALUE(FORMAT(EDATE('dim_date'[calendar_date],-12), "yyyymmdd")))
+			VAR _CanCompare = YEAR(_First) >= 2026 && YEAR(_Last) >= 2026 && _First <= _Last && COUNTROWS(_TY) = COUNTROWS(_PYKeys)
+			VAR _Channels = VALUES('dim_channel'[channel_key])
+			VAR _N = COUNTROWS(_TY)
+			VAR _NC = COUNTROWS(_Channels)
+			VAR _Eligible =
+			FILTER(
+			VALUES('dim_store'[store_key]),
+			VAR _OpTY = CALCULATE(COUNTROWS('store_operating_calendar'), REMOVEFILTERS('dim_date'), TREATAS(_TYKeys,'store_operating_calendar'[date_key]), 'store_operating_calendar'[is_operating] = 1)
+			VAR _OpPY = CALCULATE(COUNTROWS('store_operating_calendar'), REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'store_operating_calendar'[date_key]), 'store_operating_calendar'[is_operating] = 1)
+			VAR _RepTY = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), TREATAS(_TYKeys,'source_coverage_official'[date_key]), TREATAS(_Channels,'source_coverage_official'[channel_key]), 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			VAR _RepPY = CALCULATE(COUNTROWS('source_coverage_official'), REMOVEFILTERS('dim_date'), TREATAS(_PYKeys,'source_coverage_official'[date_key]), TREATAS(_Channels,'source_coverage_official'[channel_key]), 'source_coverage_official'[coverage_state] IN {"REPORTED_ZERO","REPORTED_VALUE"})
+			RETURN _OpTY = _N && _OpPY = _N && _RepTY = _N * _NC && _RepPY = _N * _NC
+			)
+			RETURN IF(NOT(_CanCompare), 0, COALESCE(COUNTROWS(_Eligible),0))
+		formatString: #,0
+		displayFolder: 06 Strict LFL
+		lineageTag: cba33bf6-6856-4f6f-9b3e-88b898953574
+
+	measure 'KPI-035 Gap By Channel' = [KPI-007 Budget Gap]
+		formatString: #,0.00
+		displayFolder: 03 Channels
+		lineageTag: b6561863-308e-41f7-9b5b-eaed3880e875
+
+	measure 'KPI-036 Transactions YoY' =
+			VAR _AsOf = MAX('generation_metadata'[official_asof])
+			VAR _First = MIN('dim_date'[calendar_date])
+			VAR _Last = MIN(MAX('dim_date'[calendar_date]), _AsOf)
+			VAR _TY = FILTER(ALLSELECTED('dim_date'), 'dim_date'[calendar_date] >= _First && 'dim_date'[calendar_date] <= _Last)
+			VAR _TYKeys = SELECTCOLUMNS(_TY, "Key", 'dim_date'[date_key])
+			VAR _PYKeys = SELECTCOLUMNS(_TY, "Key", VALUE(FORMAT(EDATE('dim_date'[calendar_date],-12), "yyyymmdd")))
+			VAR _CanCompare = YEAR(_First) >= 2026 && YEAR(_Last) >= 2026 && _First <= _Last && COUNTROWS(_TY) = COUNTROWS(_PYKeys)
+			VAR _PY = CALCULATE([KPI-010 Transactions],REMOVEFILTERS('dim_date'),TREATAS(_PYKeys,'dim_date'[date_key]))
+			RETURN IF(_CanCompare && _PY>0, DIVIDE([KPI-010 Transactions],_PY)-1)
+		formatString: 0.00%
+		displayFolder: 05 Comparisons
+		lineageTag: 9896c1d5-efd9-4760-baa3-fe984e602090
+
+	measure 'KPI-037 Basket YoY' =
+			VAR _AsOf = MAX('generation_metadata'[official_asof])
+			VAR _First = MIN('dim_date'[calendar_date])
+			VAR _Last = MIN(MAX('dim_date'[calendar_date]), _AsOf)
+			VAR _TY = FILTER(ALLSELECTED('dim_date'), 'dim_date'[calendar_date] >= _First && 'dim_date'[calendar_date] <= _Last)
+			VAR _TYKeys = SELECTCOLUMNS(_TY, "Key", 'dim_date'[date_key])
+			VAR _PYKeys = SELECTCOLUMNS(_TY, "Key", VALUE(FORMAT(EDATE('dim_date'[calendar_date],-12), "yyyymmdd")))
+			VAR _CanCompare = YEAR(_First) >= 2026 && YEAR(_Last) >= 2026 && _First <= _Last && COUNTROWS(_TY) = COUNTROWS(_PYKeys)
+			VAR _PY = CALCULATE([KPI-012 Average Basket],REMOVEFILTERS('dim_date'),TREATAS(_PYKeys,'dim_date'[date_key]))
+			RETURN IF(_CanCompare && _PY>0, DIVIDE([KPI-012 Average Basket],_PY)-1)
+		formatString: 0.00%
+		displayFolder: 05 Comparisons
+		lineageTag: 5c84f9c2-d645-4eab-a947-76280146915e
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: 266857a2-5b82-4fb8-8f7f-b1cc156649f5
+		summarizeBy: none
+		sourceColumn: Placeholder
+
+	partition _Measures = m
+		mode: import
+		source = #table(type table [Placeholder = text], {})
+

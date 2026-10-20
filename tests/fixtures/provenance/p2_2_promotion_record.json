@@ -1,0 +1,27 @@
+{
+  "artifact_sha256": {
+    "bridge_account_store_period.csv": "c88a213ce4e24c4565778c3792e24d2a6a46b9e2588d1ef8f1260bdd5589b2c5",
+    "budget_monthly.csv": "206a4a5838ebefcabfdaff2b7e959e1d5edbfc1c12b1f27bc252a0a462f71ec2",
+    "dim_marketplace_account.csv": "82063f9c5207d8c4a3aaea1dbc2f6313bd471dde6862ebe0cf73b59ef6a93c3b",
+    "marketplace_daily_snapshot.csv": "fd14e0272f11e92323af0bf4ca78f886a164d0587138b8593a9a874485e7de91",
+    "official_sales_snapshot.csv": "335646fc38fa3f9e8c77b5319f050f1b0e7d48d835446db9c3e71048f0bbc9f9",
+    "p2_2_manifest.json": "9e3aef2307e6ca24c11e9c43a58ee35fcbbf21ada7915ff3690270a652bc8f5d",
+    "source_coverage_marketplace.csv": "1c3a1913dc18992910f91409ac456030c2d35e6896305c96fd76f6e8954ab612",
+    "source_coverage_official.csv": "2a53a40d70b39faf13e3fa925927f6a96a3ad3b0cd4d29678425489dae01ab54"
+  },
+  "checkpoint": "P2.2",
+  "contract_version": "0.1",
+  "generator_version": "p2.2.0",
+  "project": "RetailPulse 360",
+  "promotion_policy": "NEW_ONLY_ATOMIC_DIRECTORY_RENAME; BLOCK_EXISTING_DIFFERENCES",
+  "scope": "Seven independent synthetic source CSVs; no full-snapshot ETL/SQL/DAX/Power BI runtime",
+  "seed": 3602026,
+  "source_candidate_manifest_sha256": "9e3aef2307e6ca24c11e9c43a58ee35fcbbf21ada7915ff3690270a652bc8f5d",
+  "source_p2_1_sha256": {
+    "dim_store.csv": "9414e58bea035bfe13a2b2698e75a8e47bf3427ef1fba203fb88bd2de9dd7c3d",
+    "p2_1_manifest.json": "3ee062ce4026af969758224db76b21dd5c817144b87845173fe228eb2f8f5dd3",
+    "p2_1_promotion_record.json": "a04c1fc656beb279c3bb8d703686b30a71895879b494a241d5871e05b124686e",
+    "store_operating_calendar.csv": "d214bc7fdeba2ca7064a031e99fdf7af4587a8b5352b8535ff7968e7f4e895ba"
+  },
+  "state": "LOCAL_PROMOTED_PENDING_INDEPENDENT_REPORT_REVIEW"
+}

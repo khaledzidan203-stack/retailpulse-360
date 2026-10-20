@@ -1,0 +1,132 @@
+relationship rp_fact_sales_daily_date_key__dim_date_date_key
+	fromColumn: fact_sales_daily.date_key
+	toColumn: dim_date.date_key
+
+relationship rp_fact_sales_daily_store_key__dim_store_store_key
+	fromColumn: fact_sales_daily.store_key
+	toColumn: dim_store.store_key
+
+relationship rp_fact_sales_daily_channel_key__dim_channel_channel_key
+	fromColumn: fact_sales_daily.channel_key
+	toColumn: dim_channel.channel_key
+
+relationship rp_fact_budget_daily_date_key__dim_date_date_key
+	fromColumn: fact_budget_daily.date_key
+	toColumn: dim_date.date_key
+
+relationship rp_fact_budget_daily_store_key__dim_store_store_key
+	fromColumn: fact_budget_daily.store_key
+	toColumn: dim_store.store_key
+
+relationship rp_fact_budget_daily_channel_key__dim_channel_channel_key
+	fromColumn: fact_budget_daily.channel_key
+	toColumn: dim_channel.channel_key
+
+relationship rp_fact_budget_monthly_store_key__dim_store_store_key
+	fromColumn: fact_budget_monthly.store_key
+	toColumn: dim_store.store_key
+
+relationship rp_fact_budget_monthly_channel_key__dim_channel_channel_key
+	fromColumn: fact_budget_monthly.channel_key
+	toColumn: dim_channel.channel_key
+
+relationship rp_fact_marketplace_daily_date_key__dim_date_date_key
+	fromColumn: fact_marketplace_daily.date_key
+	toColumn: dim_date.date_key
+
+relationship rp_fact_marketplace_daily_store_key__dim_store_store_key
+	fromColumn: fact_marketplace_daily.store_key
+	toColumn: dim_store.store_key
+
+relationship rp_fact_marketplace_daily_account_key__dim_marketplace_account_account_key
+	fromColumn: fact_marketplace_daily.account_key
+	toColumn: dim_marketplace_account.account_key
+
+relationship rp_store_operating_calendar_date_key__dim_date_date_key
+	fromColumn: store_operating_calendar.date_key
+	toColumn: dim_date.date_key
+
+relationship rp_store_operating_calendar_store_key__dim_store_store_key
+	fromColumn: store_operating_calendar.store_key
+	toColumn: dim_store.store_key
+
+relationship rp_source_coverage_official_date_key__dim_date_date_key
+	fromColumn: source_coverage_official.date_key
+	toColumn: dim_date.date_key
+
+relationship rp_source_coverage_official_store_key__dim_store_store_key
+	fromColumn: source_coverage_official.store_key
+	toColumn: dim_store.store_key
+
+relationship rp_source_coverage_official_channel_key__dim_channel_channel_key
+	fromColumn: source_coverage_official.channel_key
+	toColumn: dim_channel.channel_key
+
+relationship rp_source_coverage_marketplace_date_key__dim_date_date_key
+	fromColumn: source_coverage_marketplace.date_key
+	toColumn: dim_date.date_key
+
+relationship rp_source_coverage_marketplace_account_key__dim_marketplace_account_account_key
+	fromColumn: source_coverage_marketplace.account_key
+	toColumn: dim_marketplace_account.account_key
+
+relationship e9044f6e-c51a-40b1-b969-7476de00ef4b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.calendar_date
+	toColumn: LocalDateTable_9ad5742d-79c1-43bd-9d62-f53c577cea0b.Date
+
+relationship 90f678dd-fa65-4225-b127-229f4e289f59
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.month_start
+	toColumn: LocalDateTable_825de049-126b-4fa4-b861-09f0dd6bd753.Date
+
+relationship f8efb750-1998-47e7-b4d3-b93ac08e8fdd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.week_start_saturday
+	toColumn: LocalDateTable_8598f576-22c6-4fea-98c4-c8a2a5ec1ed4.Date
+
+relationship cffdcfd4-e36e-4751-ae3b-f42cd458007b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_date.week_end_friday
+	toColumn: LocalDateTable_d11d8a6d-8736-4b8d-9167-70ade60f558f.Date
+
+relationship 86959da6-d0b0-4828-bc6b-d9d51055a069
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_store.open_date
+	toColumn: LocalDateTable_523682f0-6b95-4613-b696-08e8593978c9.Date
+
+relationship 3630ef49-9bc6-4f5c-98b8-b5a38d4cb1a8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dim_store.last_trading_date
+	toColumn: LocalDateTable_fd734f4b-44db-4130-a5e8-b39f69c8ee06.Date
+
+relationship 6a4f1c9f-8894-4e4c-b66e-77d7acd5174c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bridge_account_store_period.valid_from
+	toColumn: LocalDateTable_118a4bf6-edd0-452a-8fbf-b8de33d78938.Date
+
+relationship 3d90de54-4c11-4b6b-ac9c-fc9e425d9ff1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bridge_account_store_period.valid_to
+	toColumn: LocalDateTable_28540d96-bc6a-4c62-aeac-4adc851c2efa.Date
+
+relationship 2e9ded12-3bb2-4cef-aa05-96adc5103e07
+	joinOnDateBehavior: datePartOnly
+	fromColumn: store_operating_calendar.calendar_date
+	toColumn: LocalDateTable_5a070f1d-e74b-4121-9436-672a953e0411.Date
+
+relationship fb4eed91-a348-4d80-b85a-6c37aff1505b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fact_budget_monthly.month_start
+	toColumn: LocalDateTable_70907654-7640-4ec4-96a7-0999a1e8728d.Date
+
+relationship 0524e878-5924-446c-843c-750acd8a964b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: generation_metadata.official_asof
+	toColumn: LocalDateTable_c5421dd7-ef68-4add-8eeb-858dd532cfac.Date
+
+relationship f28a7338-04b0-4f1b-a585-044b87e40432
+	joinOnDateBehavior: datePartOnly
+	fromColumn: generation_metadata.marketplace_asof
+	toColumn: LocalDateTable_eae3faa5-138c-4ae6-bf06-100bea666164.Date
+

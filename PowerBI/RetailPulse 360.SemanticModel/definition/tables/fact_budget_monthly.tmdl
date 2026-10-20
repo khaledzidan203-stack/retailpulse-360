@@ -1,0 +1,58 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table fact_budget_monthly
+	lineageTag: 2e136c40-4c31-4900-8c30-dc3370afec3f
+
+	column store_key
+		dataType: string
+		lineageTag: 5be18e92-a85c-4974-adf0-3003576de4e6
+		summarizeBy: none
+		sourceColumn: store_key
+
+	column month_start
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2b6a1d75-e00b-4a4b-8e83-5c193b02cd4e
+		summarizeBy: none
+		sourceColumn: month_start
+
+		variation Variation
+			isDefault
+			relationship: fb4eed91-a348-4d80-b85a-6c37aff1505b
+			defaultHierarchy: LocalDateTable_70907654-7640-4ec4-96a7-0999a1e8728d.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column channel_key
+		dataType: string
+		lineageTag: 8c95526c-5f7b-4343-b1de-c5c782ed8bc2
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column monthly_target_cents
+		dataType: int64
+		lineageTag: d445168f-4cd7-40c0-9747-0bcb7334a731
+		summarizeBy: sum
+		sourceColumn: monthly_target_cents
+
+		annotation SummarizationSetBy = Automatic
+
+	column budget_version
+		dataType: string
+		lineageTag: 95f80ce4-f88e-43c5-98d9-3b1c30396a64
+		summarizeBy: none
+		sourceColumn: budget_version
+
+	partition fact_budget_monthly = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/fact_budget_monthly.csv", {
+				        {"store_key", type text},
+				        {"month_start", type date},
+				        {"channel_key", type text},
+				        {"monthly_target_cents", Int64.Type},
+				        {"budget_version", type text}
+				    })
+				in
+				    Source
+

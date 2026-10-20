@@ -1,0 +1,12 @@
+-- P4.3 / sqlite reference patterns, use parameterized dates, stores and channels.
+-- Included in executable P4.3 Python tests; these templates are not standalone views.
+-- KPI-009: selected official channel sales / ALL official sales, same store/date.
+-- KPI-019: calculate gap at store/channel first; denominator sums NEGATIVE gaps only.
+-- KPI-020: DISTINCT operating stores from store_operating_calendar.
+-- KPI-021: DISTINCT stores from reported source coverage JOIN matching fact.
+-- KPI-033: count explicit MISSING_EXPECTED keys; reported zeros are not missing.
+-- KPI-034: period-specific SAME Strict eligible cohort for TY and paired PY.
+-- KPI-035: gap per channel = channel sales - channel allocated budget.
+-- KPI-036: YoY transactions as ratio of SUMS, Total and Strict cohorts.
+-- KPI-037: YoY basket uses [TY sales / TY tx] / [PY sales / PY tx] - 1.
+-- Zero/negative PY denominator => NULL/N/A, never 0% or infinity.

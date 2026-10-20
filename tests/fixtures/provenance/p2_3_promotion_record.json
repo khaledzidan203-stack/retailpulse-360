@@ -1,0 +1,20 @@
+{
+  "checkpoint": "P2.3-PROMOTION",
+  "contract_version": "0.1",
+  "expected_status_counts": {
+    "EXPECTED_BLOCK": 6,
+    "EXPECTED_DQ_REVIEW": 1,
+    "EXPECTED_PASS": 13
+  },
+  "fixture_warnings": "Expected publish statuses are fixtures, not actual tested processor outcomes",
+  "project": "RetailPulse 360",
+  "promoter_version": "1.0.0",
+  "promotion": "approved immutable fixture payload after local verifier passes",
+  "runtime_snapshot_processor_validation": "NOT_EXECUTED",
+  "scenario_count": 20,
+  "scope": "P2.3 deterministic test fixtures only (not Phase 3 execution)",
+  "seed": 3602026,
+  "source_artifact_count": 45,
+  "source_change_ledger_sha256": "41e69754970742856145f058373b06301c74a57a6994a3524776cc8cf486b7a1",
+  "source_manifest_sha256": "b6111158d7efbb513d3e5ab2663df09d5a95e6fc72534ca5b42dd1abff7dc46a"
+}

@@ -1,0 +1,1 @@
+Power Query Text parameter, REQUIRED: choose this machine local project root (e.g. select folder) with no trailing slash. Do not hardcode any drive in shared artifact.

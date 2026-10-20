@@ -1,0 +1,16 @@
+{
+  "artifact_sha256": {
+    "dim_store.csv": "9414e58bea035bfe13a2b2698e75a8e47bf3427ef1fba203fb88bd2de9dd7c3d",
+    "p2_1_manifest.json": "3ee062ce4026af969758224db76b21dd5c817144b87845173fe228eb2f8f5dd3",
+    "store_operating_calendar.csv": "d214bc7fdeba2ca7064a031e99fdf7af4587a8b5352b8535ff7968e7f4e895ba"
+  },
+  "checkpoint": "P2.1",
+  "contract_version": "0.1",
+  "generator_version": "p2.1.0",
+  "project": "RetailPulse 360",
+  "promotion_policy": "NEW_ONLY_ATOMIC_DIRECTORY_RENAME; DIFFERING_EXISTING_TARGET_BLOCKS",
+  "scope": "Store master and operating calendar only; sales, budget, ETL, SQL, BI unimplemented",
+  "seed": 3602026,
+  "source_candidate_manifest_sha256": "3ee062ce4026af969758224db76b21dd5c817144b87845173fe228eb2f8f5dd3",
+  "state": "LOCAL_PROMOTED_PENDING_INDEPENDENT_REPORT_REVIEW"
+}

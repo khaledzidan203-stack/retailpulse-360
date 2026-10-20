@@ -1,0 +1,86 @@
+table Query1
+	lineageTag: 9c038558-75b6-4b9a-bc8e-f55fb49ce014
+
+	column Check
+		dataType: string
+		lineageTag: b2e1d5f0-f06b-44f1-a65d-63e518b98b44
+		summarizeBy: none
+		sourceColumn: Check
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual
+		dataType: string
+		lineageTag: 1d91eda9-94fe-4d48-a2b6-cb0105b3c060
+		summarizeBy: none
+		sourceColumn: Actual
+
+		annotation SummarizationSetBy = Automatic
+
+	column Expected
+		dataType: string
+		lineageTag: 14087629-c2d7-48ed-8120-0f860d43fd0d
+		summarizeBy: none
+		sourceColumn: Expected
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: e5ee98c5-dadc-4ffe-b24f-2f4ceb0cd938
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Query1 = m
+		mode: import
+		source =
+				// RetailPulse 360 — Power Query Desktop source smoke test.
+				// TEMPORARY QA QUERY ONLY. Not part of the semantic model.
+				// Adjust LocalProjectRoot for this workstation if needed.
+				let
+				    LocalProjectRoot = pProjectRoot,
+				    Generation = Text.Trim(Text.FromBinary(File.Contents(LocalProjectRoot & "\data\processed\p3_3\CURRENT"), TextEncoding.Utf8)),
+				    GenerationRoot = LocalProjectRoot & "\data\processed\p3_3\generations\" & Generation,
+				    ReadCsv = (relativePath as text) as table =>
+				        let
+				            Source = Csv.Document(
+				                File.Contents(GenerationRoot & "\" & Text.Replace(relativePath, "/", "\")),
+				                [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+				            ),
+				            Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				        in
+				            Promoted,
+				    Sales = ReadCsv("analytics/fact_sales_daily.csv"),
+				    Budget = ReadCsv("analytics/fact_budget_daily.csv"),
+				    Digital = ReadCsv("analytics/fact_marketplace_daily.csv"),
+				    SumInteger = (tbl as table, columnName as text) as number =>
+				        List.Sum(List.Transform(Table.Column(tbl, columnName), each Number.FromText(Text.From(_), "en-US"))),
+				    RowsSales = Table.RowCount(Sales),
+				    RowsBudget = Table.RowCount(Budget),
+				    RowsDigital = Table.RowCount(Digital),
+				    OfficialCents = SumInteger(Sales, "net_sales_cents"),
+				    BudgetCents = SumInteger(Budget, "allocated_budget_cents"),
+				    DigitalCents = SumInteger(Digital, "attributed_retail_net_sales_cents"),
+				    Checks = {
+				        {"Generation", Generation, "G0004"},
+				        {"Official rows", Number.ToText(RowsSales, "0", "en-US"), "36438"},
+				        {"Daily budget rows", Number.ToText(RowsBudget, "0", "en-US"), "37054"},
+				        {"Marketplace rows", Number.ToText(RowsDigital, "0", "en-US"), "21377"},
+				        {"Official net cents", Number.ToText(OfficialCents, "0", "en-US"), "3759335807"},
+				        {"Budget allocated cents (full horizon)", Number.ToText(BudgetCents, "0", "en-US"), "3731451566"},
+				        {"Marketplace attribution cents", Number.ToText(DigitalCents, "0", "en-US"), "514398580"}
+				    },
+				    Output = Table.FromRows(
+				        List.Transform(Checks, each {_{0}, _{1}, _{2}, if _{1} = _{2} then "PASS" else "FAIL"}),
+				        {"Check", "Actual", "Expected", "Status"}
+				    ),
+				    Types = Table.TransformColumnTypes(Output, {{"Check", type text}, {"Actual", type text}, {"Expected", type text}, {"Status", type text}})
+				in
+				    Types
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

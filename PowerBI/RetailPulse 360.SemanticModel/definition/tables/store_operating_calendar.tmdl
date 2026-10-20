@@ -1,0 +1,58 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table store_operating_calendar
+	lineageTag: 6113f2d3-0172-4ee7-8915-4766f8ba7caa
+
+	column store_key
+		dataType: string
+		lineageTag: c3464fcf-820b-49e8-923c-5c6256ca93ba
+		summarizeBy: none
+		sourceColumn: store_key
+
+	column date_key
+		dataType: int64
+		lineageTag: 17a691b5-2094-4a2e-886c-2c7c3b5c58a4
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column calendar_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f1b770bc-a2be-4301-b92f-e1b6495ada0c
+		summarizeBy: none
+		sourceColumn: calendar_date
+
+		variation Variation
+			isDefault
+			relationship: 2e9ded12-3bb2-4cef-aa05-96adc5103e07
+			defaultHierarchy: LocalDateTable_5a070f1d-e74b-4121-9436-672a953e0411.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column is_operating
+		dataType: int64
+		lineageTag: 5dda87c8-0ea1-4721-baf7-e0da6d37d413
+		summarizeBy: sum
+		sourceColumn: is_operating
+
+		annotation SummarizationSetBy = Automatic
+
+	column lifecycle_state
+		dataType: string
+		lineageTag: 84b05cc0-c5fe-47a4-861e-ba5f6cbb1925
+		summarizeBy: none
+		sourceColumn: lifecycle_state
+
+	partition store_operating_calendar = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/store_operating_calendar.csv", {
+				        {"store_key", type text},
+				        {"date_key", Int64.Type},
+				        {"calendar_date", type date},
+				        {"is_operating", Int64.Type},
+				        {"lifecycle_state", type text}
+				    })
+				in
+				    Source
+

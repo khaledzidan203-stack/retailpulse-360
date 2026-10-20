@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "d2e75f00a017320638b6",
+  "displayName": "09 Digital Marketplace",
+  "displayOption": "FitToPage",
+  "height": 900,
+  "width": 1600
+}

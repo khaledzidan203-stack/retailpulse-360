@@ -1,0 +1,48 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Query1","dim_date","dim_store","dim_channel","dim_marketplace_account","bridge_account_store_period","store_operating_calendar","fact_sales_daily","fact_budget_monthly","fact_budget_daily","fact_marketplace_daily","source_coverage_official","source_coverage_marketplace","dq_findings","generation_metadata","pProjectRoot","pGeneration","fnLoadCsv","_Measures"]
+
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
+
+ref table Query1
+ref table dim_date
+ref table dim_store
+ref table dim_channel
+ref table dim_marketplace_account
+ref table bridge_account_store_period
+ref table store_operating_calendar
+ref table fact_sales_daily
+ref table fact_budget_monthly
+ref table fact_budget_daily
+ref table fact_marketplace_daily
+ref table source_coverage_official
+ref table source_coverage_marketplace
+ref table dq_findings
+ref table generation_metadata
+ref table DateTableTemplate_92b97af8-f11b-4333-b46b-af018a793c3b
+ref table LocalDateTable_9ad5742d-79c1-43bd-9d62-f53c577cea0b
+ref table LocalDateTable_825de049-126b-4fa4-b861-09f0dd6bd753
+ref table LocalDateTable_8598f576-22c6-4fea-98c4-c8a2a5ec1ed4
+ref table LocalDateTable_d11d8a6d-8736-4b8d-9167-70ade60f558f
+ref table LocalDateTable_523682f0-6b95-4613-b696-08e8593978c9
+ref table LocalDateTable_fd734f4b-44db-4130-a5e8-b39f69c8ee06
+ref table LocalDateTable_118a4bf6-edd0-452a-8fbf-b8de33d78938
+ref table LocalDateTable_28540d96-bc6a-4c62-aeac-4adc851c2efa
+ref table LocalDateTable_5a070f1d-e74b-4121-9436-672a953e0411
+ref table LocalDateTable_70907654-7640-4ec4-96a7-0999a1e8728d
+ref table LocalDateTable_c5421dd7-ef68-4add-8eeb-858dd532cfac
+ref table LocalDateTable_eae3faa5-138c-4ae6-bf06-100bea666164
+ref table _Measures
+
+ref cultureInfo en-US
+

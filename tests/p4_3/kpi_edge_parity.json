@@ -1,0 +1,464 @@
+{
+  "checkpoint": "P4.3",
+  "edge_microfixtures": 11,
+  "input_database_sha256": "3e5480af50f44f6718fcc48aa0a7ea859bd9b35259838c0b3abcc8bcaed5bb5b",
+  "scenarios": [
+    {
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "eligible_store_population": 30,
+      "pairs": 354,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          1,
+          1
+        ],
+        "kpi019_contribution": [
+          308459,
+          757801
+        ],
+        "kpi019_negative_gap_count": 7,
+        "kpi019_negative_gap_sum_cents": -757801,
+        "kpi019_selected_gap_cents": -308459,
+        "kpi019_selected_key": [
+          "S014",
+          "PROGRAM"
+        ],
+        "kpi020_operating_stores": 30,
+        "kpi021_reporting_stores": 30,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 18,
+        "kpi035_gap_by_channel_cents": {
+          "PROGRAM": 12907408,
+          "RETAIL": 80843170
+        },
+        "kpi036_strict_transactions_yoy": [
+          6131,
+          150441
+        ],
+        "kpi036_total_transactions_yoy": [
+          5137,
+          17953
+        ],
+        "kpi037_strict_basket_yoy": [
+          23003875931,
+          25988008681258
+        ],
+        "kpi037_total_basket_yoy": [
+          54078996601,
+          37275551480460
+        ],
+        "sales_cents": 2079297637,
+        "strict_py_cents": 1327849612,
+        "strict_py_transactions": 451323,
+        "strict_ty_cents": 1383187432,
+        "strict_ty_transactions": 469716,
+        "transactions": 715790
+      },
+      "scenario": "YTD_2026",
+      "selected_period_days": 354,
+      "store_filter": null
+    },
+    {
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "eligible_store_population": 30,
+      "pairs": 20,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          1,
+          1
+        ],
+        "kpi019_contribution": [
+          413773,
+          2263403
+        ],
+        "kpi019_negative_gap_count": 21,
+        "kpi019_negative_gap_sum_cents": -2263403,
+        "kpi019_selected_gap_cents": -413773,
+        "kpi019_selected_key": [
+          "S026",
+          "RETAIL"
+        ],
+        "kpi020_operating_stores": 28,
+        "kpi021_reporting_stores": 28,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 23,
+        "kpi035_gap_by_channel_cents": {
+          "PROGRAM": 711957,
+          "RETAIL": 4458976
+        },
+        "kpi036_strict_transactions_yoy": [
+          313,
+          7266
+        ],
+        "kpi036_total_transactions_yoy": [
+          613,
+          4912
+        ],
+        "kpi037_strict_basket_yoy": [
+          8600369,
+          8903082199
+        ],
+        "kpi037_total_basket_yoy": [
+          -2600709477,
+          633575004725
+        ],
+        "sales_cents": 128455679,
+        "strict_py_cents": 106898071,
+        "strict_py_transactions": 36330,
+        "strict_ty_cents": 111610668,
+        "strict_ty_transactions": 37895,
+        "transactions": 44200
+      },
+      "scenario": "MTD_DEC2026",
+      "selected_period_days": 20,
+      "store_filter": null
+    },
+    {
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "eligible_store_population": 30,
+      "pairs": 2,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          1,
+          1
+        ],
+        "kpi019_contribution": [
+          9589,
+          15064
+        ],
+        "kpi019_negative_gap_count": 7,
+        "kpi019_negative_gap_sum_cents": -30128,
+        "kpi019_selected_gap_cents": -19178,
+        "kpi019_selected_key": [
+          "S003",
+          "RETAIL"
+        ],
+        "kpi020_operating_stores": 28,
+        "kpi021_reporting_stores": 28,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 24,
+        "kpi035_gap_by_channel_cents": {
+          "PROGRAM": 265408,
+          "RETAIL": 1278714
+        },
+        "kpi036_strict_transactions_yoy": [
+          179,
+          4192
+        ],
+        "kpi036_total_transactions_yoy": [
+          111,
+          1090
+        ],
+        "kpi037_strict_basket_yoy": [
+          34868791,
+          18032148169
+        ],
+        "kpi037_total_basket_yoy": [
+          -32882861,
+          3813158186
+        ],
+        "sales_cents": 13872570,
+        "strict_py_cents": 12376217,
+        "strict_py_transactions": 4192,
+        "strict_ty_cents": 12929640,
+        "strict_ty_transactions": 4371,
+        "transactions": 4804
+      },
+      "scenario": "WTD_DEC20",
+      "selected_period_days": 2,
+      "store_filter": null
+    },
+    {
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "eligible_store_population": 8,
+      "pairs": 33,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          1,
+          1
+        ],
+        "kpi019_contribution": [
+          42967,
+          81513
+        ],
+        "kpi019_negative_gap_count": 2,
+        "kpi019_negative_gap_sum_cents": -81513,
+        "kpi019_selected_gap_cents": -42967,
+        "kpi019_selected_key": [
+          "S018",
+          "PROGRAM"
+        ],
+        "kpi020_operating_stores": 7,
+        "kpi021_reporting_stores": 7,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 7,
+        "kpi035_gap_by_channel_cents": {
+          "PROGRAM": 621364,
+          "RETAIL": 1582376
+        },
+        "kpi036_strict_transactions_yoy": [
+          427,
+          17924
+        ],
+        "kpi036_total_transactions_yoy": [
+          427,
+          17924
+        ],
+        "kpi037_strict_basket_yoy": [
+          100777241,
+          1063706851467
+        ],
+        "kpi037_total_basket_yoy": [
+          100777241,
+          1063706851467
+        ],
+        "sales_cents": 59351017,
+        "strict_py_cents": 57964517,
+        "strict_py_transactions": 17924,
+        "strict_ty_cents": 59351017,
+        "strict_ty_transactions": 18351,
+        "transactions": 18351
+      },
+      "scenario": "REGION_R02",
+      "selected_period_days": 33,
+      "store_filter": [
+        "region",
+        "R02"
+      ]
+    },
+    {
+      "channels": [
+        "RETAIL"
+      ],
+      "eligible_store_population": 30,
+      "pairs": 354,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          1743595147,
+          2079297637
+        ],
+        "kpi019_contribution": null,
+        "kpi019_negative_gap_count": 0,
+        "kpi019_negative_gap_sum_cents": 0,
+        "kpi019_selected_gap_cents": null,
+        "kpi019_selected_key": null,
+        "kpi020_operating_stores": 30,
+        "kpi021_reporting_stores": 30,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 18,
+        "kpi035_gap_by_channel_cents": {
+          "RETAIL": 80843170
+        },
+        "kpi036_strict_transactions_yoy": [
+          1970,
+          45777
+        ],
+        "kpi036_total_transactions_yoy": [
+          26021,
+          90266
+        ],
+        "kpi037_strict_basket_yoy": [
+          -327996230,
+          3797474435621
+        ],
+        "kpi037_total_basket_yoy": [
+          65429170957,
+          157321930368145
+        ],
+        "sales_cents": 1743595147,
+        "strict_py_cents": 1113465602,
+        "strict_py_transactions": 366216,
+        "strict_ty_cents": 1161282962,
+        "strict_ty_transactions": 381976,
+        "transactions": 581435
+      },
+      "scenario": "RETAIL_YTD",
+      "selected_period_days": 354,
+      "store_filter": null
+    },
+    {
+      "channels": [
+        "PROGRAM"
+      ],
+      "eligible_store_population": 30,
+      "pairs": 354,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          335702490,
+          2079297637
+        ],
+        "kpi019_contribution": [
+          308459,
+          757801
+        ],
+        "kpi019_negative_gap_count": 7,
+        "kpi019_negative_gap_sum_cents": -757801,
+        "kpi019_selected_gap_cents": -308459,
+        "kpi019_selected_key": [
+          "S014",
+          "PROGRAM"
+        ],
+        "kpi020_operating_stores": 30,
+        "kpi021_reporting_stores": 30,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 18,
+        "kpi035_gap_by_channel_cents": {
+          "PROGRAM": 12907408
+        },
+        "kpi036_strict_transactions_yoy": [
+          2633,
+          85107
+        ],
+        "kpi036_total_transactions_yoy": [
+          9714,
+          35071
+        ],
+        "kpi037_strict_basket_yoy": [
+          7557069089,
+          1881005303740
+        ],
+        "kpi037_total_basket_yoy": [
+          12583332995,
+          2342101072363
+        ],
+        "sales_cents": 335702490,
+        "strict_py_cents": 214384010,
+        "strict_py_transactions": 85107,
+        "strict_ty_cents": 221904470,
+        "strict_ty_transactions": 87740,
+        "transactions": 134355
+      },
+      "scenario": "PROGRAM_YTD",
+      "selected_period_days": 354,
+      "store_filter": null
+    },
+    {
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "eligible_store_population": 1,
+      "pairs": 354,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          1,
+          1
+        ],
+        "kpi019_contribution": null,
+        "kpi019_negative_gap_count": 0,
+        "kpi019_negative_gap_sum_cents": 0,
+        "kpi019_selected_gap_cents": null,
+        "kpi019_selected_key": null,
+        "kpi020_operating_stores": 1,
+        "kpi021_reporting_stores": 1,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 0,
+        "kpi035_gap_by_channel_cents": {
+          "PROGRAM": 50210,
+          "RETAIL": 898138
+        },
+        "kpi036_strict_transactions_yoy": null,
+        "kpi036_total_transactions_yoy": [
+          -3197,
+          11678
+        ],
+        "kpi037_strict_basket_yoy": null,
+        "kpi037_total_basket_yoy": [
+          -64928893,
+          46485463530
+        ],
+        "sales_cents": 15900166,
+        "strict_py_cents": 0,
+        "strict_py_transactions": 0,
+        "strict_ty_cents": 0,
+        "strict_ty_transactions": 0,
+        "transactions": 8481
+      },
+      "scenario": "CLOSED_S019",
+      "selected_period_days": 354,
+      "store_filter": [
+        "store",
+        "S019"
+      ]
+    },
+    {
+      "channels": [
+        "PROGRAM",
+        "RETAIL"
+      ],
+      "eligible_store_population": 30,
+      "pairs": 0,
+      "python_sql_parity": "PASS",
+      "results": {
+        "kpi009_channel_mix": [
+          1,
+          1
+        ],
+        "kpi019_contribution": [
+          4844710,
+          15363071
+        ],
+        "kpi019_negative_gap_count": 17,
+        "kpi019_negative_gap_sum_cents": -15363071,
+        "kpi019_selected_gap_cents": -4844710,
+        "kpi019_selected_key": [
+          "S022",
+          "RETAIL"
+        ],
+        "kpi020_operating_stores": 26,
+        "kpi021_reporting_stores": 26,
+        "kpi033_missing_expected_keys": 0,
+        "kpi034_strict_stores": 0,
+        "kpi035_gap_by_channel_cents": {
+          "PROGRAM": 1752868,
+          "RETAIL": 187146
+        },
+        "kpi036_strict_transactions_yoy": null,
+        "kpi036_total_transactions_yoy": null,
+        "kpi037_strict_basket_yoy": null,
+        "kpi037_total_basket_yoy": null,
+        "sales_cents": 1680038170,
+        "strict_py_cents": 0,
+        "strict_py_transactions": 0,
+        "strict_ty_cents": 0,
+        "strict_ty_transactions": 0,
+        "transactions": 578820
+      },
+      "scenario": "YTD_2025_NO_PY",
+      "selected_period_days": 365,
+      "store_filter": null
+    }
+  ],
+  "scope": "incremental Python/SQLite parity, NOT full KPI approval or DAX runtime",
+  "source_generation": "G0004",
+  "tested_incremental_kpi_ids": [
+    "KPI-009",
+    "KPI-019",
+    "KPI-020",
+    "KPI-021",
+    "KPI-033",
+    "KPI-034",
+    "KPI-035",
+    "KPI-036",
+    "KPI-037"
+  ]
+}

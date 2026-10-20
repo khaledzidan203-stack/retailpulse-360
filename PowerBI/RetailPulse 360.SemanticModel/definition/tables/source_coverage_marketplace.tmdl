@@ -1,0 +1,41 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table source_coverage_marketplace
+	lineageTag: 0933ddce-3ea7-4a31-983e-a57ad9d91e0d
+
+	column account_key
+		dataType: string
+		lineageTag: 2490fc12-5932-4eab-bdfc-8ba60adb6d46
+		summarizeBy: none
+		sourceColumn: account_key
+
+	column date_key
+		dataType: int64
+		lineageTag: b745b6f5-829b-4a36-9b35-c6591ee1f202
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column coverage_state
+		dataType: string
+		lineageTag: 8c571025-168c-4726-a037-49d344f7feee
+		summarizeBy: none
+		sourceColumn: coverage_state
+
+	column evidence
+		dataType: string
+		lineageTag: 3ace6108-4c9c-4ac1-bc1c-0c78c7131169
+		summarizeBy: none
+		sourceColumn: evidence
+
+	partition source_coverage_marketplace = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("staging/source_coverage_marketplace.csv", {
+				        {"account_key", type text},
+				        {"date_key", Int64.Type},
+				        {"coverage_state", type text},
+				        {"evidence", type text}
+				    })
+				in
+				    Source
+

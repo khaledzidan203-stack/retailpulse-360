@@ -1,0 +1,203 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1896.5377310444028,
+            "y": 471.73645845105068
+          },
+          "nodeIndex": "bridge_account_store_period",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1662.537731044403,
+            "y": 224.36759644269296
+          },
+          "nodeIndex": "dim_channel",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 755.742004629099,
+            "y": 612.42889549007259
+          },
+          "nodeIndex": "dim_date",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 564.27902301230665
+          },
+          "nodeIndex": "dim_marketplace_account",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1042.6784312423179,
+            "y": 362.04878000477044
+          },
+          "nodeIndex": "dim_store",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2180.5377310444028,
+            "y": 447.73645845105068
+          },
+          "nodeIndex": "dq_findings",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1327.3411864495472,
+            "y": 715.07970920202831
+          },
+          "nodeIndex": "fact_budget_daily",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1514.5377581331011,
+            "y": -50
+          },
+          "nodeIndex": "fact_budget_monthly",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 468.72086567134374,
+            "y": 443.63799294047618
+          },
+          "nodeIndex": "fact_marketplace_daily",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1375.5702491653117,
+            "y": 362.11189397650645
+          },
+          "nodeIndex": "fact_sales_daily",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2464.5377310444028,
+            "y": 483.73645845105068
+          },
+          "nodeIndex": "generation_metadata",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2748.5377310444028,
+            "y": 471.73645845105068
+          },
+          "nodeIndex": "Query1",
+          "nodeLineageTag": "9c038558-75b6-4b9a-bc8e-f55fb49ce014",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 285.81155694927884,
+            "y": 768.55386027875045
+          },
+          "nodeIndex": "source_coverage_marketplace",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1227.5346441085917,
+            "y": 108.92988700475371
+          },
+          "nodeIndex": "source_coverage_official",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1040.2833908213636,
+            "y": 869.47291690210136
+          },
+          "nodeIndex": "store_operating_calendar",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 45.522197094959324,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,57 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table bridge_account_store_period
+	lineageTag: 00ba4ba3-0715-49bd-a4de-c9f4d479150a
+
+	column account_key
+		dataType: string
+		lineageTag: df9ab852-15ca-4752-84c3-da3d387aa7a8
+		summarizeBy: none
+		sourceColumn: account_key
+
+	column store_key
+		dataType: string
+		lineageTag: f9e4123d-5638-4850-a460-2d5ec27ff3ff
+		summarizeBy: none
+		sourceColumn: store_key
+
+	column valid_from
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 12da6594-08c7-49be-a9f7-0efb2811c4fa
+		summarizeBy: none
+		sourceColumn: valid_from
+
+		variation Variation
+			isDefault
+			relationship: 6a4f1c9f-8894-4e4c-b66e-77d7acd5174c
+			defaultHierarchy: LocalDateTable_118a4bf6-edd0-452a-8fbf-b8de33d78938.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column valid_to
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bbfea4f1-a9ed-4421-a9ee-c9728fb52f41
+		summarizeBy: none
+		sourceColumn: valid_to
+
+		variation Variation
+			isDefault
+			relationship: 3d90de54-4c11-4b6b-ac9c-fc9e425d9ff1
+			defaultHierarchy: LocalDateTable_28540d96-bc6a-4c62-aeac-4adc851c2efa.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition bridge_account_store_period = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/bridge_account_store_period.csv", {
+				        {"account_key", type text},
+				        {"store_key", type text},
+				        {"valid_from", type date},
+				        {"valid_to", type date}
+				    })
+				in
+				    Source
+

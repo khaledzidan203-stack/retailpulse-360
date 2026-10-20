@@ -1,0 +1,34 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table dim_marketplace_account
+	lineageTag: e3a88936-4713-4196-922d-6a344fbec565
+
+	column account_key
+		dataType: string
+		lineageTag: 600eb38b-b003-4a6c-b994-5d2288be9014
+		summarizeBy: none
+		sourceColumn: account_key
+
+	column account_name
+		dataType: string
+		lineageTag: e7483a76-7de5-44aa-b928-6eeea4054e9e
+		summarizeBy: none
+		sourceColumn: account_name
+
+	column account_type
+		dataType: string
+		lineageTag: 0261671b-ff70-47fe-a379-32cc01f46962
+		summarizeBy: none
+		sourceColumn: account_type
+
+	partition dim_marketplace_account = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/dim_marketplace_account.csv", {
+				        {"account_key", type text},
+				        {"account_name", type text},
+				        {"account_type", type text}
+				    })
+				in
+				    Source
+

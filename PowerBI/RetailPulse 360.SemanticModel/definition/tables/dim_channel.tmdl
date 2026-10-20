@@ -1,0 +1,34 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table dim_channel
+	lineageTag: b2559d76-5c79-4fcf-bc61-7893835e4e6a
+
+	column channel_key
+		dataType: string
+		lineageTag: 7f24ece0-bf94-47b2-b103-72fdbe5d0655
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column channel_name
+		dataType: string
+		lineageTag: 6da48a33-8769-4489-b1ac-f97e4267f47d
+		summarizeBy: none
+		sourceColumn: channel_name
+
+	column is_additive
+		dataType: int64
+		lineageTag: 1069dc2d-a930-41e6-bff7-5c5118a0b4c6
+		summarizeBy: none
+		sourceColumn: is_additive
+
+	partition dim_channel = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/dim_channel.csv", {
+				        {"channel_key", type text},
+				        {"channel_name", type text},
+				        {"is_additive", Int64.Type}
+				    })
+				in
+				    Source
+

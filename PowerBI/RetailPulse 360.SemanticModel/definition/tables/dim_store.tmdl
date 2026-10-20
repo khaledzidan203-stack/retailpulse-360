@@ -1,0 +1,99 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table dim_store
+	lineageTag: 08b63d67-dfe7-477b-9c9f-27e049f4c65e
+
+	column store_key
+		dataType: string
+		lineageTag: 566548de-6861-4ecb-a36b-c6da2b048176
+		summarizeBy: none
+		sourceColumn: store_key
+
+	column store_name
+		dataType: string
+		lineageTag: 63753738-5b77-42d1-bb16-37f07a095b5d
+		summarizeBy: none
+		sourceColumn: store_name
+
+	column region_key
+		dataType: string
+		lineageTag: 0e286f8d-82fa-425e-a33a-f72b4e1c40ce
+		summarizeBy: none
+		sourceColumn: region_key
+
+	column region_name
+		dataType: string
+		lineageTag: c11d853c-a096-4fe6-a266-bda00541b2f3
+		summarizeBy: none
+		sourceColumn: region_name
+
+	column city_key
+		dataType: string
+		lineageTag: ac8ca596-39fc-4410-8ae8-b2973648b017
+		summarizeBy: none
+		sourceColumn: city_key
+
+	column city_name
+		dataType: string
+		lineageTag: d2bd9777-8cf4-483c-b400-0aea902fd1a7
+		summarizeBy: none
+		sourceColumn: city_name
+
+	column store_profile
+		dataType: string
+		lineageTag: 207e488d-d887-4abd-bd85-5bccf745a923
+		summarizeBy: none
+		sourceColumn: store_profile
+
+	column lifecycle_cohort
+		dataType: string
+		lineageTag: afd3eb86-bbbf-486d-aa71-eb8f4ed739d5
+		summarizeBy: none
+		sourceColumn: lifecycle_cohort
+
+	column open_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b0ff065e-9f52-4b5b-b724-511609929f4a
+		summarizeBy: none
+		sourceColumn: open_date
+
+		variation Variation
+			isDefault
+			relationship: 86959da6-d0b0-4828-bc6b-d9d51055a069
+			defaultHierarchy: LocalDateTable_523682f0-6b95-4613-b696-08e8593978c9.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column last_trading_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a127f095-ab7b-4080-85e9-d5aa88597bdb
+		summarizeBy: none
+		sourceColumn: last_trading_date
+
+		variation Variation
+			isDefault
+			relationship: 3630ef49-9bc6-4f5c-98b8-b5a38d4cb1a8
+			defaultHierarchy: LocalDateTable_fd734f4b-44db-4130-a5e8-b39f69c8ee06.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dim_store = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/dim_store.csv", {
+				        {"store_key", type text},
+				        {"store_name", type text},
+				        {"region_key", type text},
+				        {"region_name", type text},
+				        {"city_key", type text},
+				        {"city_name", type text},
+				        {"store_profile", type text},
+				        {"lifecycle_cohort", type text},
+				        {"open_date", type date},
+				        {"last_trading_date", type date}
+				    })
+				in
+				    Source
+

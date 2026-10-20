@@ -1,0 +1,55 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table dq_findings
+	lineageTag: 42b30502-0646-4f70-9410-4845f9ef8fe1
+
+	column check_id
+		dataType: string
+		lineageTag: 59331886-17e9-4a12-a2da-15229216230e
+		summarizeBy: none
+		sourceColumn: check_id
+
+	column severity
+		dataType: string
+		lineageTag: ac4035cc-01cd-4388-bf86-28861cd44ec7
+		summarizeBy: none
+		sourceColumn: severity
+
+	column source_family
+		dataType: string
+		lineageTag: 27aa6d2b-ff03-42ca-9abe-2e7dfc51e6dc
+		summarizeBy: none
+		sourceColumn: source_family
+
+	column affected_key
+		dataType: string
+		lineageTag: ec47c632-d998-4d50-b3cc-13f1c0fc2a73
+		summarizeBy: none
+		sourceColumn: affected_key
+
+	column reason
+		dataType: string
+		lineageTag: 33092cb5-5c65-4219-8161-193cb13b367f
+		summarizeBy: none
+		sourceColumn: reason
+
+	column evidence
+		dataType: string
+		lineageTag: 78e6968c-6b2c-45fe-b107-929408878ec8
+		summarizeBy: none
+		sourceColumn: evidence
+
+	partition dq_findings = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/dq_findings.csv", {
+				        {"check_id", type text},
+				        {"severity", type text},
+				        {"source_family", type text},
+				        {"affected_key", type text},
+				        {"reason", type text},
+				        {"evidence", type text}
+				    })
+				in
+				    Source
+

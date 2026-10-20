@@ -1,0 +1,126 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table dim_date
+	lineageTag: f5dc3ff7-7ef5-4600-a947-fc570d1b3185
+
+	column date_key
+		dataType: int64
+		lineageTag: a596734a-fce5-4250-94af-a8981d8edb42
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column calendar_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ca9efca7-2018-4dc7-820b-dd9a5d20793d
+		summarizeBy: none
+		sourceColumn: calendar_date
+
+		variation Variation
+			isDefault
+			relationship: e9044f6e-c51a-40b1-b969-7476de00ef4b
+			defaultHierarchy: LocalDateTable_9ad5742d-79c1-43bd-9d62-f53c577cea0b.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		lineageTag: ac96fffb-7954-4ff1-969e-0d0bc02f33ba
+		summarizeBy: sum
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: \Q0
+		lineageTag: 6c39ae1c-f4bc-4f60-9668-be5589b0f4fe
+		summarizeBy: sum
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		lineageTag: f4194b2a-287d-4715-b1a6-8d0a97e38746
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_start
+		dataType: dateTime
+		formatString: mmm yyyy
+		lineageTag: db308d5c-627d-4333-989e-7b28dc84ab0a
+		summarizeBy: none
+		sourceColumn: month_start
+
+		variation Variation
+			isDefault
+			relationship: 90f678dd-fa65-4225-b127-229f4e289f59
+			defaultHierarchy: LocalDateTable_825de049-126b-4fa4-b861-09f0dd6bd753.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year_month
+		dataType: int64
+		lineageTag: 525a8a6a-d810-4bdc-ba11-24049251bd74
+		summarizeBy: sum
+		sourceColumn: year_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column weekday_number
+		dataType: int64
+		lineageTag: ea47472a-c4b0-462b-9dec-ade858f7810b
+		summarizeBy: sum
+		sourceColumn: weekday_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_start_saturday
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5fe9fcc4-3e4b-48f2-996a-e120edb3880d
+		summarizeBy: none
+		sourceColumn: week_start_saturday
+
+		variation Variation
+			isDefault
+			relationship: f8efb750-1998-47e7-b4d3-b93ac08e8fdd
+			defaultHierarchy: LocalDateTable_8598f576-22c6-4fea-98c4-c8a2a5ec1ed4.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column week_end_friday
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 24e2776d-de7b-4d3b-830d-c400157e2d9d
+		summarizeBy: none
+		sourceColumn: week_end_friday
+
+		variation Variation
+			isDefault
+			relationship: cffdcfd4-e36e-4751-ae3b-f42cd458007b
+			defaultHierarchy: LocalDateTable_d11d8a6d-8736-4b8d-9167-70ade60f558f.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/dim_date.csv", {
+				        {"date_key", Int64.Type},
+				        {"calendar_date", type date},
+				        {"year", Int64.Type},
+				        {"quarter", Int64.Type},
+				        {"month", Int64.Type},
+				        {"month_start", type date},
+				        {"year_month", Int64.Type},
+				        {"weekday_number", Int64.Type},
+				        {"week_start_saturday", type date},
+				        {"week_end_friday", type date}
+				    })
+				in
+				    Source
+

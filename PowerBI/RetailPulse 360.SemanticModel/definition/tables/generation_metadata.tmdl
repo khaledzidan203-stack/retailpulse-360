@@ -1,0 +1,53 @@
+/// Governed RetailPulse 360 generation metadata table.
+table generation_metadata
+	lineageTag: a2917f0c-61c5-4fb3-890b-0a31331e01b5
+
+	column generation_id
+		dataType: string
+		lineageTag: 80f3dc7a-60e2-45b6-815d-6a4548c3e5e0
+		summarizeBy: none
+		sourceColumn: generation_id
+
+	column official_asof
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3177c0a6-f7eb-44d8-85f9-8c04fac1f220
+		summarizeBy: none
+		sourceColumn: official_asof
+
+		variation Variation
+			isDefault
+			relationship: 0524e878-5924-446c-843c-750acd8a964b
+			defaultHierarchy: LocalDateTable_c5421dd7-ef68-4add-8eeb-858dd532cfac.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column marketplace_asof
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cc713a30-06c8-4bf2-bb0d-83208c1f5198
+		summarizeBy: none
+		sourceColumn: marketplace_asof
+
+		variation Variation
+			isDefault
+			relationship: f28a7338-04b0-4f1b-a585-044b87e40432
+			defaultHierarchy: LocalDateTable_eae3faa5-138c-4ae6-bf06-100bea666164.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition generation_metadata = m
+		mode: import
+		source =
+				let
+				    Root = Text.TrimEnd(pProjectRoot, {"\", "/"}),
+				    Gen = if Text.Upper(Text.Trim(pGeneration)) = "CURRENT"
+				       then Text.Trim(Text.FromBinary(File.Contents(Root & "\data\processed\p3_3\CURRENT"), TextEncoding.Utf8))
+				       else Text.Trim(pGeneration),
+				    Manifest = Json.Document(File.Contents(Root & "\data\processed\p3_3\generations\" & Gen & "\generation_manifest.json")),
+				    Rows = #table({"generation_id", "official_asof", "marketplace_asof"}, {{
+				       Gen, Date.FromText(Manifest[source_asof][OFFICIAL]), Date.FromText(Manifest[source_asof][MARKETPLACE])}}),
+				    Typed = Table.TransformColumnTypes(Rows, {{"generation_id", type text}, {"official_asof", type date}, {"marketplace_asof", type date}})
+				in
+				    Typed
+

@@ -1,0 +1,14 @@
+{
+  "artifact_sha256": {
+    "kpi_coverage_scope.json": "d9a1a593592f81ba7924142b53f2b12406f20139666b5da3ca02e4ec841ce9be",
+    "kpi_edge_parity.json": "35524524821cb4d1419c004ba1e0bc6f80c5bffa04f47973e3a13d93b8925425",
+    "kpi_edge_queries.sql": "c1c4a2eec57f97982ab066e296a7564060c4b0c2c260fc4fa952e657f908fadf"
+  },
+  "checkpoint": "P4.3",
+  "microfixtures": 11,
+  "scenarios": 8,
+  "source_generation": "G0004",
+  "source_manifest_sha256": "d1135b60ff299996a05bd6edaeb26b7df9c126368984e46e8c368a031a642f92",
+  "sqlite_sha256": "3e5480af50f44f6718fcc48aa0a7ea859bd9b35259838c0b3abcc8bcaed5bb5b",
+  "state": "CANDIDATE_ONLY"
+}

@@ -1,0 +1,14 @@
+{
+  "artifact_sha256": {
+    "analytics_views.sql": "653a27ee058819a6d6ff46d28de1583391977bbf7b74460735ad2d17a2865468",
+    "kpi_queries.sql": "ce99b5bb6faf001805f769f805983b06d4541bc65d4146c5d3ed5a1911e32358",
+    "python_sql_parity.json": "31ad2fcc67d7594f071972bcc3240123f839cee9968c8a1c47d8241c09ec48ec"
+  },
+  "cases": 13,
+  "checkpoint": "P4.2",
+  "parity": "ALL_PASS",
+  "source_generation": "G0004",
+  "source_manifest_sha256": "d1135b60ff299996a05bd6edaeb26b7df9c126368984e46e8c368a031a642f92",
+  "sqlite_sha256": "3e5480af50f44f6718fcc48aa0a7ea859bd9b35259838c0b3abcc8bcaed5bb5b",
+  "state": "CANDIDATE_ONLY"
+}

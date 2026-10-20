@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "RetailPulse 360"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3be870c7-6d55-4f82-bafe-0b365cf050a1"
+  }
+}

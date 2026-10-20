@@ -1,0 +1,83 @@
+/// Governed RetailPulse 360 synthetic CSV table.
+table fact_sales_daily
+	lineageTag: 024d6283-7438-4ca5-b9fb-fdad9f35985d
+
+	column store_key
+		dataType: string
+		lineageTag: 577e0283-a49a-4d41-9130-9c599441e099
+		summarizeBy: none
+		sourceColumn: store_key
+
+	column date_key
+		dataType: int64
+		lineageTag: 20de9f09-504b-4d06-8c53-503e83d90819
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column channel_key
+		dataType: string
+		lineageTag: 793f4439-327b-497c-a211-63b7d0d6e981
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column gross_sales_cents
+		dataType: int64
+		lineageTag: ee44662d-9699-4b32-adb8-eb949e8a8c62
+		summarizeBy: none
+		sourceColumn: gross_sales_cents
+
+	column returns_amount_cents
+		dataType: int64
+		lineageTag: ae12d9c5-bbb3-4a22-95b7-05b6a1ba4508
+		summarizeBy: none
+		sourceColumn: returns_amount_cents
+
+	column net_sales_cents
+		dataType: int64
+		lineageTag: cea94b5d-044f-4c0c-a8b7-f13cde564032
+		summarizeBy: none
+		sourceColumn: net_sales_cents
+
+	column transactions
+		dataType: int64
+		lineageTag: f2036818-780c-4c60-af17-4bb7c43e3869
+		summarizeBy: none
+		sourceColumn: transactions
+
+	column units
+		dataType: int64
+		lineageTag: 4fe43911-01ee-46da-8884-1855e30c4a86
+		summarizeBy: none
+		sourceColumn: units
+
+	column source_snapshot_id
+		dataType: string
+		lineageTag: 5af7f5a1-200c-464b-b456-bf1bb7a9e48c
+		summarizeBy: none
+		sourceColumn: source_snapshot_id
+
+	column lineage_hash
+		dataType: string
+		lineageTag: b185611b-5364-4656-a339-df4d243aa080
+		summarizeBy: none
+		sourceColumn: lineage_hash
+
+	partition fact_sales_daily = m
+		mode: import
+		source =
+				let
+				    Source = fnLoadCsv("analytics/fact_sales_daily.csv", {
+				        {"store_key", type text},
+				        {"date_key", Int64.Type},
+				        {"channel_key", type text},
+				        {"gross_sales_cents", Int64.Type},
+				        {"returns_amount_cents", Int64.Type},
+				        {"net_sales_cents", Int64.Type},
+				        {"transactions", Int64.Type},
+				        {"units", Int64.Type},
+				        {"source_snapshot_id", type text},
+				        {"lineage_hash", type text}
+				    })
+				in
+				    Source
+
