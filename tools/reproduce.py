@@ -161,8 +161,18 @@ def reproduce(output):
     refresh.run_external(qa_root,'G0005',qa/'g0005.sqlite')
     need((root/'data/processed/p3_3/CURRENT').read_bytes()==b'G0004\n','Main baseline was changed')
     record('actual-publisher-fault-rollback-replay-and-G0005-refresh',start)
+    # Generate a relocatable Power BI Desktop entry point. Only the isolated
+    # output copy gets the machine-local root; the public source remains clean.
+    shutil.copy2(REPO / 'tools' / 'open_powerbi.py', root / 'OPEN_POWER_BI.py')
+    (root / 'OPEN_POWER_BI.cmd').write_text(
+        '@echo off\npy -3.13 "%~dp0OPEN_POWER_BI.py"\nif errorlevel 1 pause\n',
+        encoding='utf-8')
+    subprocess.run([sys.executable, '-B', str(root / 'OPEN_POWER_BI.py'),
+                    '--configure-only'], cwd=root, check=True)
+    print('PASS | PORTABLE_POWER_BI_PATH | Generated path configured automatically', flush=True)
+
     print('HEADLESS BUILD PASS | Desktop runtime NOT RUN',flush=True)
-    print('Open PowerBI from the generated project; set pProjectRoot to that project folder.')
+    print('Open generated project/OPEN_POWER_BI.cmd; it detects paths automatically.')
     return root
 
 

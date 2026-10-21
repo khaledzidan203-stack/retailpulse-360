@@ -2,7 +2,7 @@
 
 This execution has no enabled native Power BI Desktop control. Static files and screenshots do not execute Power Query, DAX or interactive visuals. Final release readiness remains false until the following local checks are recorded.
 
-1. Open the copied PBIP from the generated project. Set pProjectRoot to that local project directory; pGeneration=CURRENT. Refresh and confirm Query1 reports seven PASS checks for G0004.
+1. **Portable bootstrap:** From a clean clone, run `tools/reproduce.py` to a new external folder. Confirm `PASS | PORTABLE_POWER_BI_PATH` and `project/OPEN_POWER_BI.cmd`. On Windows, use the launcher; do not manually edit Power Query parameters. Move the generated project to another folder (with Power BI closed) and relaunch to verify automatic rebinding. Refresh and confirm Query1 reports seven PASS checks for G0004.
 2. Execute the preserved DAX query from `PowerBI/RetailPulse 360.SemanticModel/DAXQueries/Query 1.dax` in the actual model. Compare with freshly rebuilt CSV/SQLite values. Historical 492 comparisons are not current test evidence.
 3. Visit all pages 00–10. Test INDEX navigation, year/month/quarter/store/region filters, reset, cross-highlighting, labels, sorting and negative/blank visual states. Capture filter context and observed versus expected values.
 4. Verify Retail/Program locked scopes and effective budget gauge roles, including achievement above 100%. Preserve manual gauge formatting.

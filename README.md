@@ -74,14 +74,15 @@ All 190 output files (187 regenerated artifacts and 3 retained provenance fixtur
 
 See [reproduction details](docs/REPRODUCTION.md). Historical scripts are retained for traceability; use the supported bootstrap rather than running historical executables recursively.
 
-## Open Power BI
+## Open Power BI — zero manual path configuration
 
-1. Complete the bootstrap above. Open `PowerBI/RetailPulse 360.pbip` **inside the generated output's `project/` directory** in Power BI Desktop with PBIP/PBIR support.
-2. In Transform Data → Manage Parameters, set `pProjectRoot` to the absolute local generated `project` folder. Leave `pGeneration` as `CURRENT`. The shared placeholder deliberately contains no workstation path; Query1 uses the same parameter.
-3. Apply, refresh, and check Query1's seven checks against G0004. Follow [Desktop runtime QA](docs/POWER_BI_RUNTIME_QA.md), including DAX parity and interactions.
-4. Select `00 INDEX` and save locally if you want it as the opening page. The approved saved active page remains unchanged.
+1. **Recommended first run:** On Windows, double-click `START_RETAILPULSE_360.cmd` from the GitHub clone. It automatically selects a fresh folder under your user profile, builds/tests the synthetic data and opens the generated PBIP. Or run `python -B tools/reproduce.py --output "../retailpulse build"` manually if you prefer choosing the output location. The bootstrap generates data, tests it, and **automatically configures the copied PBIP** with the output project's actual absolute path.
+2. On Windows, **double-click `OPEN_POWER_BI.cmd` in the generated `project/` folder**. It re-detects the project directory, updates only the Power Query `pProjectRoot` parameter when needed, then opens the PBIP. No manual `Manage Parameters` step is necessary.
+3. If you move the generated project to any other local folder or drive, close Power BI Desktop first and double-click `OPEN_POWER_BI.cmd` again. Its path discovery uses its own location, not the terminal's current working directory.
+4. `pGeneration` stays `CURRENT`; the generated `CURRENT` pointer resolves the approved G0004 data. Run Refresh, then use the [Desktop runtime QA checklist](docs/POWER_BI_RUNTIME_QA.md).
+5. The public source TMDL retains a deliberate `SET_LOCAL_BUILD_PROJECT_ROOT` placeholder so it never contains a developer's private workstation path. **Always open the generated PBIP**, not the source repo PBIP, for live data.
 
-No report builder is run. Approved page IDs, navigation, layout, formatting, slicers, gauge roles, labels, sorts and 43 measures are preserved. The current report contains **164 visual containers**, based on current files, not an older 299-visual map.
+The launcher binds local paths **before Power BI Desktop opens**. Power Query `File.Contents` itself cannot infer the PBIP file's location; consequently, directly double-clicking a *moved* PBIP without the launcher is not supported. A first-time user may still need to approve local file permissions/privacy prompts in Desktop. No report visual, DAX expression, measure or approved design is changed by this setup.
 
 ## Report gallery
 
